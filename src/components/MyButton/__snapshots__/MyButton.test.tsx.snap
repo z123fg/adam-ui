@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test MyButton Component should snapshot 1`] = `
+<DocumentFragment>
+  <button
+    class="btn  btn-default btn-sm"
+    id="123"
+  >
+    Default Button
+  </button>
+</DocumentFragment>
+`;

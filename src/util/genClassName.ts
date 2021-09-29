@@ -1,7 +1,7 @@
 
 //input: "btn", {btn-sm: true,btn-danger:false}
 // output: ["btn", "btn-sm"]
-type args = (string|{[key:string]:boolean})[]
+export type args = (string|{[key:string]:boolean})[]
 
 const genClassName:(...args:args)=>string[] = (...rest:args) => {
 //["btn",{btn-sm:true},{btn-danger:false}]
