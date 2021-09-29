@@ -16,6 +16,9 @@ export enum ButtonType {
 
 interface IMyButtonProps {
   buttonType?: ButtonType; //primary danger default
+  /** 
+  button type for MyButton
+   */
   buttonSize?: ButtonSize; //large small
   disabled?: boolean;
   className?: string;
