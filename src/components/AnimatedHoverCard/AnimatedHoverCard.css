@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap");
+.card-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  -webkit-box-reflect: below 1px
+    linear-gradient(transparent, transparent, transparent, #000);
+}
+
+.card-text {
+  text-align: center;
+}
+
+.card-text h3 {
+  font-family: "Comfortaa", cursive;
+  font-weight: 700;
+}
+
+.card-text p {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1rem;
+}
+
+.card-container .card-style-1 {
+  position: relative;
+  width: 320px;
+  height: 400px;
+  background-color: black;
+  margin: 0 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  background: linear-gradient(
+    45deg,
+    #2da2ff 25%,
+    #444 25%,
+    #444 50%,
+    #2da2ff 50%,
+    #2da2ff 75%,
+    #444 75%,
+    #444 100%
+  );
+  background-size: 40px 40px;
+  filter: grayscale(1);
+  animation: animateBG 0.5s linear infinite;
+  animation-play-state: paused;
+  transition: filter 1s;
+  display: flex;
+  justify-content: center;
+}
+
+.card-container .card-style-1:hover {
+  animation-play-state: running;
+  filter: grayscale(0);
+}
+
+.card-style-1 img {
+  position: absolute;
+  bottom: 0;
+  height: 90%;
+  transition: height 0.5s;
+}
+
+.card-style-1 img:hover {
+  height: 110%;
+}
+
+.card-container .card-style-2 {
+  position: relative;
+  width: 320px;
+  height: 400px;
+  background-color: black;
+  margin: 0 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    #2da2ff 25%,
+    #444 25%,
+    #444 50%,
+    #2da2ff 50%,
+    #2da2ff 75%,
+    #444 75%,
+    #444 100%
+  );
+  background-size: 40px 40px;
+  filter: grayscale(1);
+  animation: animateBG 0.5s linear infinite;
+  animation-play-state: paused;
+  transition: filter 1s;
+  display: flex;
+  justify-content: center;
+}
+
+.card-container .card-style-2:hover {
+  animation-play-state: running;
+  filter: grayscale(0);
+}
+
+.card-style-2 img {
+  position: absolute;
+  bottom: 0;
+  height: 90%;
+  transition: height 0.5s;
+}
+
+.card-style-2 img:hover {
+  height: 110%;
+}
+
+@keyframes animateBG {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: 40px;
+  }
+}
