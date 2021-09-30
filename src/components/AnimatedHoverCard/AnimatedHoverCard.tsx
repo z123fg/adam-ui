@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC } from "react";
 import "./AnimatedHoverCard.css";
 import img1 from "./img/img1.png";
 import genClassName from "../../util/genClassName";
@@ -36,14 +36,21 @@ const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
   if (cardType === CardType.Text) {
     return (
       //for text
-      <div className="card-container">
-        <div className="card">
-          <section className="card-text">
-            <h3 className="card-text__title">{title}</h3>
-            <p className="card-text__description">{description}</p>
+      <div aria-label="Text Card Div" className="card-container">
+        <div aria-label="this is actual card" className="card">
+          <section
+            aria-label="this section contains text"
+            className="card-text"
+          >
+            <h3 aria-label="title" className="card-text__title">
+              {title}
+            </h3>
+            <p aria-label="description" className="card-text__description">
+              {description}
+            </p>
           </section>
-          <div className={classNameStr}>
-            <img src={imgSrc} alt="img" />
+          <div aria-label="Image Div" className={classNameStr}>
+            <img aria-label="Image" src={imgSrc} alt="img" />
           </div>
         </div>
       </div>
@@ -51,10 +58,10 @@ const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
   } else {
     //for pure
     return (
-      <div className="card-container">
-        <div className="card">
-          <div className={classNameStr}>
-            <img src={imgSrc} alt="img" />
+      <div aria-label="Pure Card Div" className="card-container">
+        <div aria-label="this is actual card" className="card">
+          <div aria-label="Image Div" className={classNameStr}>
+            <img aria-label="Image" src={imgSrc} alt="img" />
           </div>
         </div>
       </div>
