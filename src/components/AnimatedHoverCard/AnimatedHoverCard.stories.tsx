@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import AnimatedHoverCard, { CardType, CardStyle } from "./AnimatedHoverCard";
+import img1 from "./img/img1.png";
 
 export default {
   title: "Example/AnimatedHoverCard",
@@ -16,4 +17,5 @@ Default.args = {
   cardType: CardType.Text,
   title: "Title",
   description: "Description",
+  imgSrc: img1,
 };
