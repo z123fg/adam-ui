@@ -14,17 +14,19 @@ export enum CardStyle {
 }
 
 interface IAnimatedCardProps {
-  cardType?: CardType;
+  cardType: CardType;
+  cardStyle: string;
   className?: string;
+  title?: string;
   description?: string;
   imgSrc?: string;
-  cardStyle: string;
 }
 
 const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
   cardType = CardType.Text,
   className = "",
-  description = "",
+  title = "Title",
+  description = "Description",
   imgSrc = img1,
   cardStyle = CardStyle.Style1,
 }) => {
@@ -35,12 +37,14 @@ const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
     return (
       //for text
       <div className="card-container">
-        <section className="card-text">
-          <h3>Test</h3>
-          <p>Paragraph</p>
-        </section>
-        <div className={classNameStr}>
-          <img src={imgSrc} alt="img" />
+        <div className="card">
+          <section className="card-text">
+            <h3 className="card-text__title">{title}</h3>
+            <p className="card-text__description">{description}</p>
+          </section>
+          <div className={classNameStr}>
+            <img src={imgSrc} alt="img" />
+          </div>
         </div>
       </div>
     );

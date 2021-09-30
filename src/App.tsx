@@ -34,6 +34,8 @@ function App() {
         imgSrc={img}
         cardStyle={CardStyle.Style1}
         cardType={CardType.Text}
+        title="test title"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sem fringilla ut morbi tincidunt augue."
       />
     </div>
   );
