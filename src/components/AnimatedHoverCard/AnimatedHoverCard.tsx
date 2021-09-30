@@ -52,8 +52,10 @@ const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
     //for pure
     return (
       <div className="card-container">
-        <div className="card-style-1">
-          <img src={imgSrc} alt="img" />
+        <div className="card">
+          <div className={classNameStr}>
+            <img src={imgSrc} alt="img" />
+          </div>
         </div>
       </div>
     );
