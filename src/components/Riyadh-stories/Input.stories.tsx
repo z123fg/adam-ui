@@ -6,11 +6,11 @@ export default {
 } as ComponentMeta<typeof Input>;
 
 export const Small: ComponentStory<typeof Input> = () => (
-  <Input size="small" type="text" placeholder="Small" />
+  <Input color="green" size="small" type="text" placeholder="Small" />
 );
 export const Medium: ComponentStory<typeof Input> = () => (
-  <Input size="medium" type="text" placeholder="Medium" />
+  <Input color="red" size="medium" type="text" placeholder="Medium" />
 );
 export const Large: ComponentStory<typeof Input> = () => (
-  <Input size="large" type="text" placeholder="Large" />
+  <Input color="blue" size="large" type="text" placeholder="Large" />
 );

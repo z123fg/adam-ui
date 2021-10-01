@@ -7,14 +7,23 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 export const Success: ComponentStory<typeof Button> = () => (
-  <Button variant="success">Success</Button>
+  <Button size="small" variant="success">
+    Success
+  </Button>
 );
 export const Secondary: ComponentStory<typeof Button> = () => (
-  <Button variant="secondary">Secondary</Button>
-);
-export const Primary: ComponentStory<typeof Button> = () => (
-  <Button variant="primary">Primary</Button>
+  <Button size="medium" variant="secondary">
+    Secondary
+  </Button>
 );
 export const Danger: ComponentStory<typeof Button> = () => (
-  <Button variant="danger">Danger</Button>
+  <Button size="medium" variant="danger">
+    Danger
+  </Button>
+);
+
+export const Primary: ComponentStory<typeof Button> = () => (
+  <Button size="large" variant="primary">
+    Primary
+  </Button>
 );

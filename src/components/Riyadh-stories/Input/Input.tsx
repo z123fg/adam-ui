@@ -4,11 +4,12 @@ type InputProps = {
   size: string;
   type: string;
   placeholder: string;
+  color: string;
 };
 
 const Input = (props: InputProps) => {
-  const { size = "medium", ...rest } = props;
-  return <input className={`input ${size}`} {...rest} />;
+  const { color = "black", size = "medium", ...rest } = props;
+  return <input className={`input ${size} ${color}`} {...rest} />;
 };
 
 export default Input;

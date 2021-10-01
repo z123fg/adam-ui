@@ -33,6 +33,27 @@
   background-color: rgb(255, 245, 189);
   color: black;
 }
+.large {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 120px;
+}
+.small {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 80px;
+}
+.medium {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 43px;
+  width: 100px;
+}
 .success:hover {
   background-color: white;
   border: green solid 2px;

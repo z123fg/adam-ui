@@ -18,7 +18,9 @@ export const Register: ComponentStory<typeof Input> = () => {
       <br />
       <Input size="medium" type="password" placeholder="Password" />
       <br />
-      <Button variant="success">Register</Button>
+      <Button size="medium" variant="success">
+        Register
+      </Button>
     </div>
   );
 };
@@ -30,7 +32,9 @@ export const Login = () => {
       <br />
       <Input size="medium" type="password" placeholder="Password" />
       <br />
-      <Button variant="primary">Log in</Button>
+      <Button size="medium" variant="primary">
+        Login
+      </Button>
     </div>
   );
 };
@@ -45,7 +49,9 @@ export const Contact = () => {
       <br />
       <Textarea size="large" type="text" placeholder="Message" />
       <br />
-      <Button variant="danger">Submit</Button>
+      <Button size="medium" variant="danger">
+        Submit
+      </Button>
     </div>
   );
 };
