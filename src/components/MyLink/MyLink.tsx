@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, MouseEvent } from "react";
 import genClassName from "../../util/genClassName";
 
 export enum Underline {
@@ -47,6 +47,7 @@ const MyLink: FC<ExtendedMyLink> = ({
     variant = Variant.Default,
     disabled = false,
     className = "",
+    target = false,
     ...rest
 }) => {
     let classNameStr = genClassName(className,
@@ -57,11 +58,25 @@ const MyLink: FC<ExtendedMyLink> = ({
         }
     ).join(" ");
 
-    console.log(classNameStr, disabled);
-
     const render = () => {
         if (disabled) {
             classNameStr += " disabled";
+            rest.onClick = (e: MouseEvent) => {
+                e.preventDefault();
+            }
+        }
+
+        if (target){
+            <a
+                {...(rest as React.DetailedHTMLProps<
+                    React.AnchorHTMLAttributes<HTMLAnchorElement>,
+                    HTMLAnchorElement
+                >)}
+                className={classNameStr}
+                rel="noopener"
+            >
+                {children}
+            </a>
         }
         return (
             <a

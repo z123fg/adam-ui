@@ -29,7 +29,8 @@ function App() {
         <h4>Default</h4>
         <MyLink>Default No href</MyLink>
         <MyLink href="#">Default href</MyLink>
-        <MyLink disabled>Disabled</MyLink>
+        <MyLink target="_blank" href={"https://www.google.com"}>Default href to google</MyLink>
+        <MyLink href={"https://www.google.com"} disabled>Disabled</MyLink>
         <MyLink className="link-red">Additional Classname</MyLink>
         <h4>Underline Options</h4>
         <MyLink href="#">Underline</MyLink>
