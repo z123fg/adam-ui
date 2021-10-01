@@ -1,29 +1,23 @@
-import React from "react";
-import "./styles/index.scss";
-import MyButton, {
-  ButtonSize,
-  ButtonType,
-} from "./components/MyButton/MyButton";
+import React from 'react';
+import Icon, {  IconColor, IconSize } from './components/Icon/Icon'
 
 function App() {
   return (
     <div className="App">
-      <h1>Adam UI</h1>
-      <h4>Default</h4>
-      <MyButton>Default</MyButton>
-      <MyButton disabled>Disabled</MyButton>
-      <MyButton isDark>Dark Button</MyButton>
-      <MyButton className="btn-red">Additional Class Name</MyButton>
-      <h4>Sizes</h4>
-      <MyButton buttonSize={ButtonSize.Small}>Small Button</MyButton>
-      <MyButton buttonSize={ButtonSize.Large}>Large Button</MyButton>
-      <h4>Types</h4>
-      <MyButton >Default Button</MyButton>
-      <MyButton buttonType={ButtonType.Primary}>Primary Button</MyButton>
-      <MyButton buttonType={ButtonType.Secondary}>Secondary Button</MyButton>
-      <MyButton buttonType={ButtonType.Danger}>Danger Button</MyButton>
-      <MyButton href={"https://www.google.com"}  buttonType={ButtonType.Link}>Link Button</MyButton>
-      <MyButton  href={"https://www.google.com"} buttonType={ButtonType.Link} disabled>Link Button</MyButton>
+      <h1>Welcome to Customized UI</h1>
+      <h2>Default</h2>
+      <Icon>Default Icon</Icon>
+      <h2>Different Size</h2>
+      <Icon iconSize={IconSize.Large}>Large Icon</Icon>
+      <Icon iconSize={IconSize.Medium}>Medium Icon</Icon>
+      <Icon iconSize={IconSize.Small}>Small Icon</Icon>
+
+      <h2>Different Type Icon with Colors</h2>
+      <Icon iconColor={IconColor.Black}>Default Icon</Icon>
+      <Icon iconColor={IconColor.Blue}>Safe Icon</Icon>
+      <Icon iconColor={IconColor.Red}>Danger Icon</Icon>
+      <Icon iconColor={IconColor.Gray}>Disabled Icon</Icon>
+
     </div>
   );
 }
