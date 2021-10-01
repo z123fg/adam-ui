@@ -4,6 +4,7 @@ import MyButton, {
   ButtonSize,
   ButtonType,
 } from "./components/MyButton/MyButton";
+import MyLink, { Underline, Variant } from "./components/MyLink/MyLink";
 
 function App() {
   return (
@@ -24,6 +25,20 @@ function App() {
       <MyButton buttonType={ButtonType.Danger}>Danger Button</MyButton>
       <MyButton href={"https://www.google.com"}  buttonType={ButtonType.Link}>Link Button</MyButton>
       <MyButton  href={"https://www.google.com"} buttonType={ButtonType.Link} disabled>Link Button</MyButton>
+      <div className = "mylink">
+        <h4>Default</h4>
+        <MyLink>Default No href</MyLink>
+        <MyLink href="#">Default href</MyLink>
+        <MyLink disabled>Disabled</MyLink>
+        <h4>Underline Options</h4>
+        <MyLink>Underline</MyLink>
+        <MyLink underLine={Underline.None}>No Underline</MyLink>
+        <MyLink underLine={Underline.Hover}>Hover</MyLink>
+        <h4>Variants</h4>
+        <MyLink>Default variant</MyLink>
+        <MyLink variant={Variant.Body}>Body variant</MyLink>
+        <MyLink variant={Variant.Button}>Button variant</MyLink>
+      </div>
     </div>
   );
 }

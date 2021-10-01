@@ -1,0 +1,119 @@
+@mixin link-variant($font-weight, $font-size, $line-height, $letter-spacing){
+    font-weight: $font-weight;
+    font-size: $font-size;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+}
+
+// variables
+$link-color: #1976d2;
+
+// default
+$link-font-weight: 400;
+$link-font-size: 1rem default;
+$link-line-height: 1.5 default;
+$link-letter-spacing: 0.00938em !default;
+
+// body
+$link-font-weight-body: 400 !default;
+$link-font-size-body: 0.875rem !default;
+$link-line-height-body: 1.43 !default;
+$link-letter-spacing-body: 0.01071em !default;
+
+// button
+$link-font-weight-button: 500 !default;
+$link-font-size-button: 0.875rem !default;
+$link-line-height-button: 1.75 !default;
+$link-letter-spacing-button: 0.02857em !default;
+
+// h1
+// $link-font-weight-
+// $link-font-size-
+// $link-line-height-
+// $link-letter-spacing-
+
+// h2
+// $link-font-weight-
+// $link-font-size-
+// $link-line-height-
+// $link-letter-spacing-
+
+// h3
+// $link-font-weight-
+// $link-font-size-
+// $link-line-height-
+// $link-letter-spacing-
+
+// overline
+// $link-font-weight-
+// $link-font-size-
+// $link-line-height-
+// $link-letter-spacing-
+
+//subtitile
+// $link-font-weight-
+// $link-font-size-
+// $link-line-height-
+// $link-letter-spacing-
+
+
+.link{
+    margin: 0;
+    margin-left:  16px;
+    color: $link-color;
+    text-decoration: underline;
+    text-decoration-color: rgba(25, 118, 210, 0.4);
+    cursor: pointer;
+    &:not([href]) {
+        cursor: text;
+        color: $link-color;
+    }
+}
+
+.link-always,
+.link-always:not([href]){
+    text-decoration: underline;
+    &:hover{
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        color: $link-color;
+    }
+}
+
+.link-none,
+.link-none:not([href]){
+    text-decoration: none;
+    color: $link-color;
+    &:hover{
+        color: $link-color;
+    }
+}
+
+.link-hover,
+.link-hover:not([href]){
+    text-decoration: none;
+    color: $link-color;
+    &:hover{
+        text-decoration: underline;
+        color: $link-color;
+    }
+}
+
+.link-default {
+    @include link-variant($link-font-weight, $link-font-size, $link-line-height, $link-letter-spacing);
+}
+
+.link-body{
+    @include link-variant($link-font-weight-body, $link-font-size-body, $link-line-height-body, $link-letter-spacing-body);
+}
+
+.link-button{
+    @include link-variant($link-font-weight-button, $link-font-size-button, $link-line-height-button, $link-letter-spacing-button);
+    text-transform: uppercase;
+}
+
+.disabled,
+.disabled:not([href]){
+    cursor: not-allowed;
+    opacity: $btn-disabled-opacity;
+}
