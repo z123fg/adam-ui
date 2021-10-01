@@ -22,13 +22,17 @@
 }
 
 .msg-urgent {
-  background-color: tomato;
   border-width: thick;
-  border-color: brown;
+  font-weight: 800;
+  // background-color: #ff5757;
+  // color: #b30000;
+  // border-color: #ff0606;
 }
 
 .msg-red {
-  color: red;
+  color: #c83349;
+  background-color: #f8d7da;
+  border-color: #e99b9a;
 }
 
 .msg-black {
@@ -36,7 +40,9 @@
 }
 
 .msg-blue {
-  color: blue;
+  background-color: #78b9e7;
+  color: #004c91;
+  border-color: #007dc6;
 }
 
 // .msg-dark {

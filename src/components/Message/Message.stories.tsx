@@ -13,20 +13,20 @@ export default {
 
 const Template: ComponentStory<typeof Message> = (args) => <Message {...args} />;
 
-export const Urgent = Template.bind({});
-Urgent.args = {
+export const Type = Template.bind({});
+Type.args = {
   msgType: MessageType.Urgent,
   msgContent: 'Message',
 };
 
-export const Red = Template.bind({});
-Red.args = {
+export const Color = Template.bind({});
+Color.args = {
   msgColor:MessageColor.Red,
   msgContent: 'Message',
 };
 
-export const Large = Template.bind({});
-Large.args = {
+export const Size = Template.bind({});
+Size.args = {
   msgSize: MessageSize.Large,
   msgContent: 'Message',
 };
