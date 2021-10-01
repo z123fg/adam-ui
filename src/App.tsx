@@ -32,7 +32,7 @@ function App() {
       <AnimatedHoverCard
         className="Test"
         imgSrc={img}
-        cardStyle={CardStyle.Style2}
+        cardStyle={CardStyle.Style1}
         cardType={CardType.Pure}
         title="test title"
         description="test para"

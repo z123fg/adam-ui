@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import "./AnimatedHoverCard.css";
 import img1 from "./img/img1.png";
 import genClassName from "../../util/genClassName";
@@ -20,6 +20,8 @@ interface IAnimatedCardProps {
   title?: string;
   description?: string;
   imgSrc?: string;
+  bgColor1?: string;
+  bgColor2?: string;
 }
 
 const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
@@ -29,9 +31,14 @@ const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
   description = "Description",
   imgSrc = img1,
   cardStyle = CardStyle.Style1,
+  bgColor1 = "#2da2ff",
+  bgColor2 = "#444",
 }) => {
   let classNameStr = genClassName(cardStyle, className).join(" ");
   console.log(classNameStr);
+
+  let root = document.querySelector("card-style-1");
+  console.log(root);
 
   if (cardType === CardType.Text) {
     return (
@@ -49,7 +56,7 @@ const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
               {description}
             </p>
           </section>
-          <div aria-label="Image Div" className={classNameStr}>
+          <div aria-label="Image Div" id="style" className={classNameStr}>
             <img aria-label="Image" src={imgSrc} alt="img" />
           </div>
         </div>
