@@ -31,6 +31,10 @@ interface IMyLinkProps {
     option to disable the link
      */
     disabled?: boolean;
+    /**
+    target options are: "_self" | "_blank" | "_parent" | "_top" | (string & {})
+     */
+    target?: React.HTMLAttributeAnchorTarget;
 }
 
 type ExtendedMyLink = IMyLinkProps &
