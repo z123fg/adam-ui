@@ -4,6 +4,7 @@ import MyButton, {
   ButtonSize,
   ButtonType,
 } from "./components/MyButton/MyButton";
+import MyCheckbox, { CheckboxSize } from "./components/MyCheckbox/MyCheckbox";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
       <MyButton buttonType={ButtonType.Danger}>Danger Button</MyButton>
       <MyButton href={"https://www.google.com"}  buttonType={ButtonType.Link}>Link Button</MyButton>
       <MyButton  href={"https://www.google.com"} buttonType={ButtonType.Link} disabled>Link Button</MyButton>
+      <h4>check</h4>
+      <MyCheckbox checkboxSize={CheckboxSize.Small} />Small
+      <MyCheckbox checkboxSize={CheckboxSize.Large} />Large
     </div>
   );
 }
