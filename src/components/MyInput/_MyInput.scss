@@ -1,0 +1,63 @@
+$input-size-sm: 40px;
+$input-size-lg: 60px;
+.my-input {
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height;
+  border: none;
+  color: $body-color;
+  text-align: center;
+  margin-right: 5px;
+  margin-left: 5px;
+  &.file {
+    border: none;
+  }
+  &:focus {
+    outline: none;
+  }
+  &[readonly] {
+    cursor: not-allowed;
+  }
+}
+
+.input-default {
+  border-bottom: 1px solid gray;
+  &.input-fail {
+    border-bottom: 2px solid red;
+    color: red
+  }
+  &.input-success {
+    border-bottom: 2px solid green;
+    color: green
+  }
+}
+.input-filled {
+  background-color: $gray-200;
+  border-bottom: 1px solid gray;
+  &.input-fail {
+    border: 2px solid red;
+    color: red
+  }
+  &.input-success {
+    border: 2px solid green;
+    color: green
+  }
+}
+.input-outline {
+  border: 1px solid gray;
+  &.input-fail {
+    border: 2px solid red;
+    color: red
+  }
+  &.input-success {
+    border: 2px solid green;
+    color: green
+  }
+}
+
+.input-small {
+  font-size: $font-size-sm * 1.1;
+}
+
+.input-large {
+  font-size: $font-size-lg;
+}
