@@ -1,0 +1,31 @@
+.ac {
+    position: relative;
+    width: 320px;
+    margin-left: 20px;
+}
+
+.ac-input {
+    background: #fff;
+    width: 100%;
+    padding-left: 8px;
+    padding-right: 32px;
+    height: 32px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    border: 1px solid #b6c1ce;
+    line-height: 32px;
+    &:focus {
+        border-color: #0063cc;
+        outline: none;
+    }
+}
+
+.ac-list {
+    padding: 0 24px;
+    width: 100%;
+    box-sizing: border-box;
+    &:hover {
+        background-color: #ebf4ff;
+        width: 320px;
+    }
+}
