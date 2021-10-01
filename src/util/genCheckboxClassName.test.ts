@@ -1,6 +1,7 @@
 import "@testing-library/jest-dom";
 import genCheckboxClassName, { args } from "./genCheckboxName";
 
+
 describe("test genCheckboxClassName function", () => {
   it("should generate class name array as expected", () => {
     const mockInput = [
