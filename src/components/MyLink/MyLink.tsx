@@ -67,8 +67,6 @@ const MyLink: FC<ExtendedMyLink> = ({
         }
 
         if (target) {
-            console.log(target);
-
             return (
                 <a
                     {...(rest as React.DetailedHTMLProps<
