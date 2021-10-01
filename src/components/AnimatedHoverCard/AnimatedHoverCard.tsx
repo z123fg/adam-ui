@@ -19,13 +19,21 @@ export enum CardStyle {
 }
 
 interface IAnimatedCardProps {
+  /**2 card types*/
   cardType: CardType;
+  /**For now, only 2 styles available: card-style-{number} */
   cardStyle: string;
+  /**You can give any className to div that contains the img*/
   className?: string;
+  /**Title for text card type*/
   title?: string;
+  /**Description for text card type*/
   description?: string;
+  /**insert your img source path*/
   imgSrc?: string;
+  /**This changes animated background color 1*/
   bgColor1?: string;
+  /**This changes animated background color 2*/
   bgColor2?: string;
 }
 
