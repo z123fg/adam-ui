@@ -47,7 +47,7 @@ const MyLink: FC<ExtendedMyLink> = ({
     variant = Variant.Default,
     disabled = false,
     className = "",
-    target = false,
+    target = "",
     ...rest
 }) => {
     let classNameStr = genClassName(className,
@@ -66,17 +66,22 @@ const MyLink: FC<ExtendedMyLink> = ({
             }
         }
 
-        if (target){
-            <a
-                {...(rest as React.DetailedHTMLProps<
-                    React.AnchorHTMLAttributes<HTMLAnchorElement>,
-                    HTMLAnchorElement
-                >)}
-                className={classNameStr}
-                rel="noopener"
-            >
-                {children}
-            </a>
+        if (target) {
+            console.log(target);
+
+            return (
+                <a
+                    {...(rest as React.DetailedHTMLProps<
+                        React.AnchorHTMLAttributes<HTMLAnchorElement>,
+                        HTMLAnchorElement
+                    >)}
+                    className={classNameStr}
+                    target={target}
+                    rel="noopener"
+                >
+                    {children}
+                </a>
+            )
         }
         return (
             <a
