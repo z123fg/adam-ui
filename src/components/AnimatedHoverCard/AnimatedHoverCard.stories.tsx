@@ -20,6 +20,7 @@ Style1.args = {
   imgSrc: img1,
   bgColor1: "#2da2ff",
   bgColor2: "#444",
+  className: "",
   titleClassName: "",
   descriptionClassName: "",
 };
@@ -33,6 +34,7 @@ Style2.args = {
   imgSrc: img1,
   bgColor1: "#2da2ff",
   bgColor2: "#444",
+  className: "",
   titleClassName: "",
   descriptionClassName: "",
 };
@@ -46,6 +48,7 @@ Pure.args = {
   imgSrc: img1,
   bgColor1: "#2da2ff",
   bgColor2: "#444",
+  className: "",
   titleClassName: "",
   descriptionClassName: "",
 };
@@ -59,6 +62,7 @@ Text.args = {
   imgSrc: img1,
   bgColor1: "#2da2ff",
   bgColor2: "#444",
+  className: "",
   titleClassName: "",
   descriptionClassName: "",
 };
