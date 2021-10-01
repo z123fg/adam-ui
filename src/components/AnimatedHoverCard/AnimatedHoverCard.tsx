@@ -3,6 +3,11 @@ import "./AnimatedHoverCard.css";
 import img1 from "./img/img1.png";
 import genClassName from "../../util/genClassName";
 
+declare function myGetComputedStyle(
+  elt: Element | null,
+  pseudoElt?: string | null
+): CSSStyleDeclaration;
+
 export enum CardType {
   Pure = "pure",
   Text = "text",
@@ -35,10 +40,14 @@ const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
   bgColor2 = "#444",
 }) => {
   let classNameStr = genClassName(cardStyle, className).join(" ");
-  console.log(classNameStr);
 
-  let root = document.querySelector("card-style-1");
-  console.log(root);
+  useEffect(() => {
+    let color = document.getElementsByClassName(cardStyle)[0];
+    let newColor = (color as unknown) as HTMLElement;
+
+    newColor.style.setProperty("--background-color-1", bgColor1);
+    newColor.style.setProperty("--background-color-2", bgColor2);
+  }, [cardStyle, bgColor1, bgColor2]);
 
   if (cardType === CardType.Text) {
     return (
@@ -56,7 +65,7 @@ const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
               {description}
             </p>
           </section>
-          <div aria-label="Image Div" id="style" className={classNameStr}>
+          <div aria-label="Image Div" id="textDiv" className={classNameStr}>
             <img aria-label="Image" src={imgSrc} alt="img" />
           </div>
         </div>

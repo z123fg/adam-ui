@@ -36,6 +36,8 @@ function App() {
         cardType={CardType.Pure}
         title="test title"
         description="test para"
+        bgColor1="white"
+        bgColor2="black"
       />
     </div>
   );
