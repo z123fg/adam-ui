@@ -1,0 +1,15 @@
+.switch {
+  background: "salmon";
+  position: relative;
+  display: inline-block;
+  color: $body-color;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  &.disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: $btn-disabled-opacity;
+    box-shadow: none;
+  }
+}

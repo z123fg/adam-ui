@@ -46,7 +46,8 @@ const MyButton: FC<ExtendedMyButton> = ({
   isDark=false,
   ...rest
 }) => {
-    console.log("className", className);
+  console.log("className", className);
+  
   let classNameStr = genClassName(className,
     "btn",
     {

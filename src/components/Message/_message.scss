@@ -1,0 +1,83 @@
+// .msg {
+//   position: relative;
+//   display: inline-block;
+//   font-weight: $msg-font-weight;
+//   color: $body-color;
+//   white-space: nowrap;
+//   text-align: center;
+//   vertical-align: middle;
+//   border: $msg-border-width solid transparent;
+//   box-shadow: $msg-box-shadow;
+//   cursor: pointer;
+//   transition: $msg-transition;
+//   @include message-size(
+//     $msg-padding-y,
+//     $msg-padding-x,
+//     $msg-font-size,
+//     $border-radius
+//   );
+// }
+
+// .msg-sm {
+//   @include message-size(
+//     $msg-padding-y-sm,
+//     $msg-padding-x-sm,
+//     $msg-font-size-sm,
+//     $border-radius-sm
+//   );
+// }
+
+// .msg-lg {
+//   @include message-size(
+//     $msg-padding-y-lg,
+//     $msg-padding-x-lg,
+//     $msg-font-size-lg,
+//     $border-radius-lg
+//   );
+// }
+
+.msg {
+  vertical-align: middle;
+  position: relative;
+  // cursor: pointer;
+  padding: 1.25rem 1.25rem 0.75rem 0.75rem;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  width: fit-content;
+  font-size: 16;
+}
+
+.msg-lg {
+  font-size: x-large;
+}
+
+.msg-sm {
+  font-size: medium;
+}
+
+.msg-default {
+  background-color: white;
+}
+
+.msg-urgent {
+  background-color: tomato;
+  border-width: thick;
+  border-color: brown;
+}
+
+.msg-red {
+  color: red;
+}
+
+.msg-black {
+  color: black;
+}
+
+.msg-blue {
+  color: blue;
+}
+
+// .msg-dark {
+//   background-color: $gray-800;
+//   color: $gray-500;
+// }
