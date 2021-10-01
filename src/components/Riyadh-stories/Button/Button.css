@@ -1,0 +1,61 @@
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.primary {
+  background-color: rgb(56, 56, 255);
+}
+.primary:hover {
+  background-color: rgb(255, 255, 255);
+  border: blue solid 2px;
+  color: blue;
+}
+.danger {
+  background-color: red;
+}
+.danger:hover {
+  background-color: white;
+  border: red solid 2px;
+
+  color: red;
+}
+.success {
+  background-color: green;
+}
+.secondary {
+  background-color: rgb(255, 245, 189);
+  color: black;
+}
+.large {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 120px;
+}
+.small {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 80px;
+}
+.medium {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 43px;
+  width: 100px;
+}
+.success:hover {
+  background-color: white;
+  border: green solid 2px;
+  color: green;
+}

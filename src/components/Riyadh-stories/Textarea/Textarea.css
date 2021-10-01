@@ -1,0 +1,13 @@
+.textarea {
+  display: block;
+  width: 400px;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid;
+  border-color: inherit;
+  background-color: rgb(255, 255, 255);
+  font-family: sans-serif;
+  font-size: 1.1rem;
+}

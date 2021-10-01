@@ -1,0 +1,35 @@
+.input {
+  display: block;
+  width: 400px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid;
+  background-color: white;
+}
+
+.small {
+  height: 35px;
+  font-size: 0.85rem;
+}
+.medium {
+  height: 40px;
+  font-size: 1rem;
+}
+
+.large {
+  height: 45px;
+  font-size: 1.15rem;
+}
+.green {
+  border: 2px solid;
+  border-color: green;
+}
+.blue {
+  border: 2px solid;
+  border-color: blue;
+}
+.red {
+  border: 2px solid;
+  border-color: red;
+}
