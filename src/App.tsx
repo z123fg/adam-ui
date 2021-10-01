@@ -4,6 +4,7 @@ import MyButton, {
   ButtonSize,
   ButtonType,
 } from "./components/MyButton/MyButton";
+import MyModal from "./components/MyModal/MyModal";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <MyButton buttonType={ButtonType.Danger}>Danger Button</MyButton>
       <MyButton href={"https://www.google.com"}  buttonType={ButtonType.Link}>Link Button</MyButton>
       <MyButton  href={"https://www.google.com"} buttonType={ButtonType.Link} disabled>Link Button</MyButton>
+      <MyModal />
     </div>
   );
 }
