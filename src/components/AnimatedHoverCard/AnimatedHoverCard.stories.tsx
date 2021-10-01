@@ -11,8 +11,8 @@ const Template: ComponentStory<typeof AnimatedHoverCard> = (args) => (
   <AnimatedHoverCard {...args} />
 );
 
-export const Default = Template.bind({});
-Default.args = {
+export const Style1 = Template.bind({});
+Style1.args = {
   cardStyle: CardStyle.Style1,
   cardType: CardType.Text,
   title: "Title",
@@ -20,4 +20,45 @@ Default.args = {
   imgSrc: img1,
   bgColor1: "#2da2ff",
   bgColor2: "#444",
+  titleClassName: "",
+  descriptionClassName: "",
+};
+
+export const Style2 = Template.bind({});
+Style2.args = {
+  cardStyle: CardStyle.Style2,
+  cardType: CardType.Text,
+  title: "Title",
+  description: "Description",
+  imgSrc: img1,
+  bgColor1: "#2da2ff",
+  bgColor2: "#444",
+  titleClassName: "",
+  descriptionClassName: "",
+};
+
+export const Pure = Template.bind({});
+Pure.args = {
+  cardStyle: CardStyle.Style1,
+  cardType: CardType.Pure,
+  title: "Title",
+  description: "Description",
+  imgSrc: img1,
+  bgColor1: "#2da2ff",
+  bgColor2: "#444",
+  titleClassName: "",
+  descriptionClassName: "",
+};
+
+export const Text = Template.bind({});
+Text.args = {
+  cardStyle: CardStyle.Style1,
+  cardType: CardType.Text,
+  title: "Title",
+  description: "Description",
+  imgSrc: img1,
+  bgColor1: "#2da2ff",
+  bgColor2: "#444",
+  titleClassName: "",
+  descriptionClassName: "",
 };
