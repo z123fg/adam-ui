@@ -37,6 +37,7 @@ function App() {
         title="test title"
         description="test para"
         titleClassName="title className test "
+        descriptionClassName="descrption class test"
         bgColor1="white"
         bgColor2="black"
       />
