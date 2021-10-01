@@ -44,7 +44,7 @@ export const Message: FC<IMessagesProps> = ({
     let classNameStr = genClassName(className,
         "msg",
         {
-            [`msg-still`]:!!msgClick,
+            [`msg-click`]:!!msgClick,
         [`msg-${msgType}`]: !!msgType,
         [`msg-${msgSize}`]: !!msgSize,
         [`msg-${msgColor}`]: !!msgColor,
@@ -54,15 +54,6 @@ export const Message: FC<IMessagesProps> = ({
     const [show, setShow] = useState(msgClick);
     const [appear, setAppear] = useState(true);
 
-    let autoMsg = (
-        <div className={classNameStr} {...(rest as IMessagesProps)}
-            data-testid='message-element'>
-            <div className='content'>
-                <p>{msgContent}</p>
-            </div>
-        </div >    
-    )
-        
     setTimeout(() => {
         setAppear(false)
     }, 2000);
@@ -86,10 +77,15 @@ export const Message: FC<IMessagesProps> = ({
     }
 
     if(appear) {
-        return autoMsg;
-    }
-
-    return (
+        return (
+        <div className={classNameStr} {...(rest as IMessagesProps)}
+            data-testid='message-element'>
+            <div className='content'>
+                <p>{msgContent}</p>
+            </div>
+        </div >    
+    )
+    }else return (
         null
     )
 

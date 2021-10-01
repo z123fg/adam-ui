@@ -37,18 +37,19 @@ function App() {
       <br /> <br />
 
       <Message
-      className='red-message'
+        msgContent='This is a red message' />
+      
+      <Message
         msgColor={MessageColor.Red}
       msgContent='This is a red message' />
 
       <Message
-      className='lg-message' msgClick={true}
+      msgClick={true}
         msgSize={MessageSize.Large}
         msgContent='This is a large message.' />
       
       <Message
-      className='red-message'
-      msgType={MessageType.Urgent}
+        msgType={MessageType.Urgent}
       msgContent='This is a urgent message'/>
       
       <br />
