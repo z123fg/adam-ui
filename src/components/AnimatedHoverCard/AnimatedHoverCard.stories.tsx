@@ -18,4 +18,6 @@ Default.args = {
   title: "Title",
   description: "Description",
   imgSrc: img1,
+  bgColor1: "#2da2ff",
+  bgColor2: "#444",
 };
