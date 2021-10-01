@@ -35,6 +35,9 @@ interface IAnimatedCardProps {
   bgColor1?: string;
   /**This changes animated background color 2*/
   bgColor2?: string;
+
+  /**Accept className for title*/
+  titleClassName?: string;
 }
 
 const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
@@ -46,8 +49,10 @@ const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
   cardStyle = CardStyle.Style1,
   bgColor1 = "#2da2ff",
   bgColor2 = "#444",
+  titleClassName = "",
 }) => {
   let classNameStr = genClassName(cardStyle, className).join(" ");
+  let titleClass = genClassName(" card-text__title", titleClassName).join("");
 
   useEffect(() => {
     let color = document.getElementsByClassName(cardStyle)[0];
@@ -66,7 +71,7 @@ const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
             aria-label="this section contains text"
             className="card-text"
           >
-            <h3 aria-label="title" className="card-text__title">
+            <h3 aria-label="title" className={titleClass}>
               {title}
             </h3>
             <p aria-label="description" className="card-text__description">

@@ -33,9 +33,10 @@ function App() {
         className="Test"
         imgSrc={img}
         cardStyle={CardStyle.Style1}
-        cardType={CardType.Pure}
+        cardType={CardType.Text}
         title="test title"
         description="test para"
+        titleClassName="title className test "
         bgColor1="white"
         bgColor2="black"
       />
