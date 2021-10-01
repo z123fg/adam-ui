@@ -38,6 +38,10 @@ function App() {
         <MyLink>Default variant</MyLink>
         <MyLink variant={Variant.Body}>Body variant</MyLink>
         <MyLink variant={Variant.Button}>Button variant</MyLink>
+        <MyLink variant={Variant.H1}>H1 variant</MyLink>
+        <MyLink variant={Variant.H2}>H2 variant</MyLink>
+        <MyLink variant={Variant.H3}>H3 variant</MyLink>
+        <MyLink variant={Variant.subtitle}>Subtitle variant</MyLink>
       </div>
     </div>
   );
