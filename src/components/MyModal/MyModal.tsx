@@ -1,16 +1,24 @@
 import { FC, useState } from "react";
 import myGenClassName from "./util/myGenClassName";
 
-enum ModalTypes {
+export enum ModalTypes {
   Primary = "primary",
   Secondary = "secondary",
   Danger = "danger",
-  Default = "default",
+  Tertiary = "tertiary",
 }
 
-enum SizeTypes {
+export enum SizeTypes {
   Small = "sm",
   Large = "lg",
+}
+
+export enum ColorTypes {
+  Blue = "blue",
+  Red = "red",
+  Green = "green",
+  White = "white",
+  Black = "black",
 }
 
 interface Props {
@@ -18,7 +26,7 @@ interface Props {
   text?: string;
   modalType?: ModalTypes;
   buttonType?: ModalTypes;
-  fontColor?: ModalTypes;
+  fontColor?: ColorTypes;
   fontSize?: SizeTypes;
   className?: string;
 }
@@ -31,15 +39,15 @@ interface PrimaryStyling {
 
 type ClassNameGenerator = () => string;
 
-export default function MyModal({
+const MyModal:FC<Props> = ({
   children,
   text = "Alert!",
-  modalType = ModalTypes.Default,
-  buttonType = ModalTypes.Default,
-  fontColor = ModalTypes.Default,
+  modalType = ModalTypes.Primary,
+  buttonType = ModalTypes.Secondary,
+  fontColor = ColorTypes.Black,
   fontSize = SizeTypes.Small,
   className,
-}: Props) {
+}) => {
   const [toggle, setToggle] = useState(true);
 
   const content = children ? children : <div>{text}</div>;
@@ -57,18 +65,18 @@ export default function MyModal({
   const buttonClassNames: ClassNameGenerator = () => {
     const type = buttonType ? buttonType : "";
     const { color, size } = primaryStyles;
-    const newStr = myGenClassName("btn", type, color, size, "").join(" ");
+    const newStr = myGenClassName("btn", type, `font-color-${color}`, size, "").join(" ");
     return `btn ${newStr}`;
   };
 
   const containerClassNames: ClassNameGenerator = () => {
     const type = modalType ? modalType : "";
     const { color, size, classes } = primaryStyles;
-    return myGenClassName("mymodal", type, color, size, classes).join(" ")
+    return myGenClassName("mymodal", type, `font-color-${color}`, size, classes).join(" ")
   };
 
   const buttons = (
-    <div>
+    <div className="mymodal-btn-container">
       <button className={buttonClassNames()} onClick={toggleHandler}>
         Confirm
       </button>
@@ -86,3 +94,5 @@ export default function MyModal({
 
   return <>{toggle && output}</>;
 }
+
+export default MyModal;

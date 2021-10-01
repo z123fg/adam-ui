@@ -4,7 +4,7 @@ import MyButton, {
   ButtonSize,
   ButtonType,
 } from "./components/MyButton/MyButton";
-import MyModal from "./components/MyModal/MyModal";
+import MyModal, {ModalTypes, SizeTypes} from "./components/MyModal/MyModal";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <h1>Adam UI</h1>
       <h4>Default</h4>
       <MyButton>Default</MyButton>
-      <MyButton disabled>Disabled</MyButton>
+      {/* <MyButton disabled>Disabled</MyButton>
       <MyButton isDark>Dark Button</MyButton>
       <MyButton className="btn-red">Additional Class Name</MyButton>
       <h4>Sizes</h4>
@@ -24,8 +24,8 @@ function App() {
       <MyButton buttonType={ButtonType.Secondary}>Secondary Button</MyButton>
       <MyButton buttonType={ButtonType.Danger}>Danger Button</MyButton>
       <MyButton href={"https://www.google.com"}  buttonType={ButtonType.Link}>Link Button</MyButton>
-      <MyButton  href={"https://www.google.com"} buttonType={ButtonType.Link} disabled>Link Button</MyButton>
-      <MyModal />
+      <MyButton  href={"https://www.google.com"} buttonType={ButtonType.Link} disabled>Link Button</MyButton> */}
+      <MyModal text={"Blah Blah Blah"}/>
     </div>
   );
 }

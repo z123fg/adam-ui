@@ -10,7 +10,60 @@
     align-items: center;
 
     .mymodal-container {
-        background-color: white;
         width: 40%;
+        padding: 20px;
+        border-radius: 10px;
+
+        .mymodal-btn-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    .mymodal-sm {
+        font-size: 20px;
+    }
+
+    .mymodal-lg {
+        font-size: 40px;
+    }
+
+    .mymodal-tertiary {
+        font-weight: bold;
+        background-color: $gray-500;
+    }
+
+    .mymodal-primary {
+        font-weight: bold;
+        background-color: $primary;
+        color: $white;
+    }
+
+    .mymodal-secondary {
+        font-weight: bold;
+        background-color: $secondary;
+        color: $black;
+    }
+
+    .mymodal-danger {
+        font-weight: bold;
+        background-color: $danger;
+        color: $black;
+    }
+
+    .mymodal-font-color-blue {
+        color: $blue;   
+    }
+    .mymodal-font-color-red {
+        color: $red;   
+    }
+    .mymodal-font-color-green {
+        color: $green;   
+    }
+    .mymodal-font-color-black {
+        color: $black;   
+    }
+    .mymodal-font-color-white {
+        color: $white;   
     }
 }
