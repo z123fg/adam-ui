@@ -7,7 +7,6 @@ import BaoUI from "./BaoUI"
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
     <BaoUI />
   </React.StrictMode>,
   document.getElementById("root")
