@@ -92,6 +92,14 @@ $link-letter-spacing-subtitle: 0.00714em !default;
     }
 }
 
+.link-red,
+.link-red:not([href]){
+    color: red;
+    &:hover{
+        color: red;
+    }
+}
+
 .link-default {
     @include link-variant($link-font-weight, $link-font-size, $link-line-height, $link-letter-spacing);
 }

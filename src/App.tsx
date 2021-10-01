@@ -30,8 +30,9 @@ function App() {
         <MyLink>Default No href</MyLink>
         <MyLink href="#">Default href</MyLink>
         <MyLink disabled>Disabled</MyLink>
+        <MyLink className="link-red">Additional Classname</MyLink>
         <h4>Underline Options</h4>
-        <MyLink>Underline</MyLink>
+        <MyLink href="#">Underline</MyLink>
         <MyLink underLine={Underline.None}>No Underline</MyLink>
         <MyLink underLine={Underline.Hover}>Hover</MyLink>
         <h4>Variants</h4>
