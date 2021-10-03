@@ -4,8 +4,6 @@ import MyButton, {
   ButtonSize,
   ButtonType,
 } from "./components/MyButton/MyButton";
-
-//import AutoComplete from "./components/MySearchBox/AutoComplete2";
 import data from "./components/MySearchBox/data.json"
 import AutoComplete from "./components/MySearchBox/AutoComplete";
 
