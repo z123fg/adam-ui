@@ -1,60 +1,59 @@
-import React, { ChangeEvent, useState, FC } from "react";
-import genClassName from "../../util/genClassName";
+import * as React from "react";
 
-export enum ItemType {
-    Item = "list"
+interface Props {
+    data: string[];
 }
 
-interface DataType {
-    // items display in the dropdown menu
-    items: any[] | undefined;
-    // the value to display in the input field
-    value: any | null;
-    onChange: ((e: ChangeEvent<HTMLInputElement>) => void) | undefined;
-    className?: string;
-    itemType?: ItemType;
-}
+const AutoComplete: React.FC<Props> = ({ data }) => {
+    const [search, setSearch] = React.useState<string>("");
+    const [filterResults, setFilterResults] = React.useState<string[]>([]);
+    const [showResults, setShowResults] = React.useState<boolean>(false);
 
-const AutoComplete: FC<DataType> = ({ 
-    items = [], 
-    value, 
-    onChange, 
-    className="",
-    itemType = ItemType.Item
-}) => {
-    const [searchResult, setSearchResult] = useState<any[]>([])
-
-    let classNameStr = genClassName(className, "ac", {
-            [`ac-${itemType}`]: !!itemType
-        }
-    ).join(" "); 
-
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const input = e.target.value;
-        //setSearchInput(input);
+        setSearch(input)
 
-        let selection:any[] = [];
+        const result = data.filter((value) => 
+            value.toLowerCase().indexOf(input.toLowerCase()) > -1
+        );
 
-        if (input.length > 0) {
-            selection = items.filter((result:any) => {
-                return result.includes(input)
-            })
-            setSearchResult(selection)
+        if(input.length > 0) {
+            setFilterResults(result);
         } else {
-            setSearchResult([])
+            setFilterResults([]);
         }
-        onChange&&onChange(e)
+
+        setShowResults(true);
+    };
+
+    const handleSelect = (result:string) => {
+        setShowResults(false);
+        setFilterResults([]);
+        setSearch(result)
+    }
+
+    const Suggestions = () => {
+        return filterResults.length?(
+            <>
+                <ul className="ac-list">
+                    {filterResults.map((result:string, index:number) => {
+                        return <li key={index} onClick={()=>handleSelect(result)}>{result}</li>
+                    })}
+                </ul>
+            </>
+        ) : (
+            <>
+                <p className="ac-no-result">Sorry, no results found.</p>  
+            </>   
+        )
     }
 
     return (
         <>
-            <input value={value} onChange={handleChange} className="ac ac-search"/>
-            {searchResult.map((search:any) => {
-                return (<div className={classNameStr}>{search}</div>)
-            })}
+            <input type="text" value={search} onChange={handleChange} className="ac-input"/>
+            {showResults && search && <Suggestions />}
         </>
     )
-
 }
 
-export default AutoComplete;
+export default AutoComplete

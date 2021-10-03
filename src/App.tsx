@@ -5,19 +5,11 @@ import MyButton, {
   ButtonType,
 } from "./components/MyButton/MyButton";
 
+//import AutoComplete from "./components/MySearchBox/AutoComplete2";
+import data from "./components/MySearchBox/data.json"
 import AutoComplete from "./components/MySearchBox/AutoComplete";
-import PokeAPI from "./components/MySearchBox/PokeAPI";
 
 function App() {
-  const pokeAPI = PokeAPI();
-  const data = pokeAPI.props.children.props.children;
-
-  const [searchInput, setSearchInput] = useState('')
-
-  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearchInput(e.target.value)
-  }
-
   return (
     <div className="App">
       <h1>Adam UI</h1>
@@ -41,7 +33,7 @@ function App() {
       <br />
       <div>
         <h1>Auto Complete Search Box</h1>
-        <AutoComplete items={data} value={searchInput} onChange={onChange} />
+        <AutoComplete data={data} />
       </div>
     </div>
   );
