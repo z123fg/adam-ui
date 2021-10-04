@@ -1,26 +1,24 @@
-import React, { ReactNode, cloneElement } from "react";
-import genClassName from "../../util/genClassName";
-// import imageData from "../../data/imageData";
-
-// export enum SliderType {
-//   Default = "default",
-// }
+import React from "react";
 
 export enum SliderSize {
   Large = "lg",
   Small = "sm",
 }
-export interface ISliderProps {
-  children: ReactNode;
+export interface ISliderProps
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  > {
   sliderSize?: SliderSize;
   photos: number;
-  imageData: { id: number; src: string }[];
-  //   sliderType: SliderType;
+  imageData: { src: string }[];
 }
 
-const MySlider: React.FC<ISliderProps> = (props) => {
-  const { children, sliderSize, photos, imageData } = props;
-  // console.log(children);
+const MySlider: React.FC<ISliderProps> = ({
+  sliderSize = SliderSize.Small,
+  photos,
+  imageData,
+}) => {
   let classNameList: string[] = ["slider"];
   if (sliderSize === SliderSize.Large) {
     classNameList.push("slider-lg");
@@ -31,17 +29,17 @@ const MySlider: React.FC<ISliderProps> = (props) => {
 
   const classNames = classNameList.join(" ");
 
-  // const childrenWithProps =
-  //   React.cloneElement(children, {
-  //     width: (photos * 100) / photos + "%",
-  //   })
-
   return (
     <div className={classNames}>
       <div className="slider-container ">
         <div className="slider-inner" style={{ width: photos * 100 + "%" }}>
-          {imageData.map((image) => (
-            <img key={image.id} src={image.src} />
+          {imageData.map((image, index) => (
+            <img
+              key={index}
+              src={image.src}
+              alt="..."
+              style={{ width: (1 / photos) * 100 + "%" }}
+            />
           ))}
         </div>
       </div>
