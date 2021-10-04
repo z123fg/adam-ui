@@ -23,6 +23,10 @@ Style1.args = {
   className: "",
   titleClassName: "",
   descriptionClassName: "",
+  cardContainerPadding: "1rem",
+  imgHeight: "80%",
+  cardBGWidth: "300px",
+  cardBGHight: "400px",
 };
 
 export const Style2 = Template.bind({});
@@ -37,6 +41,10 @@ Style2.args = {
   className: "",
   titleClassName: "",
   descriptionClassName: "",
+  cardContainerPadding: "1rem",
+  imgHeight: "80%",
+  cardBGWidth: "300px",
+  cardBGHight: "400px",
 };
 
 export const Pure = Template.bind({});
@@ -51,6 +59,10 @@ Pure.args = {
   className: "",
   titleClassName: "",
   descriptionClassName: "",
+  cardContainerPadding: "1rem",
+  imgHeight: "80%",
+  cardBGWidth: "300px",
+  cardBGHight: "400px",
 };
 
 export const Text = Template.bind({});
@@ -65,4 +77,8 @@ Text.args = {
   className: "",
   titleClassName: "",
   descriptionClassName: "",
+  cardContainerPadding: "1rem",
+  imgHeight: "80%",
+  cardBGWidth: "300px",
+  cardBGHight: "400px",
 };
