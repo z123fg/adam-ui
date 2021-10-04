@@ -4,15 +4,19 @@
 :root {
   --background-color-1: #2da2ff;
   --background-color-2: #444;
+  --card-container-padding: 1rem;
+  --img-height: 80%;
+  --card-bg-width: 17rem;
+  --card-bg-height: 400px;
 }
 
 .card-container {
-  width: 20rem;
+  width: fit-content;
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
+  padding: var(--card-container-padding);
 }
 
 .card {
@@ -41,8 +45,8 @@
 
 .card-container .card-style-1 {
   position: relative;
-  width: 300px;
-  height: 400px;
+  width: var(--card-bg-width);
+  height: var(--card-bg-height);
   background-color: black;
   margin: auto;
   margin-top: 20px;
@@ -74,7 +78,7 @@
 .card-style-1 img {
   position: absolute;
   bottom: 0;
-  height: 90%;
+  height: var(--img-height);
   transition: height 0.5s;
 }
 
@@ -84,8 +88,8 @@
 
 .card-container .card-style-2 {
   position: relative;
-  width: 300px;
-  height: 400px;
+  width: var(--card-bg-width);
+  height: var(--card-bg-height);
   background-color: black;
   margin: auto;
   margin-top: 20px;
@@ -117,7 +121,7 @@
 .card-style-2 img {
   position: absolute;
   bottom: 0;
-  height: 90%;
+  height: var(--img-height);
   transition: height 0.5s;
 }
 

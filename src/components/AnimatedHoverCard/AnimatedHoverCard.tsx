@@ -3,11 +3,6 @@ import "./AnimatedHoverCard.css";
 import img1 from "./img/img1.png";
 import genClassName from "../../util/genClassName";
 
-declare function myGetComputedStyle(
-  elt: Element | null,
-  pseudoElt?: string | null
-): CSSStyleDeclaration;
-
 export enum CardType {
   Pure = "pure",
   Text = "text",
@@ -39,7 +34,20 @@ interface IAnimatedCardProps {
   titleClassName?: string;
   /**Accept className for description*/
   descriptionClassName?: string;
+  /**Accept padding for card container*/
+  cardContainerPadding?: string;
+  /**Accept image height value*/
+  imgHeight?: string;
+  /**Change background width*/
+  cardBGWidth?: string;
+  /**Change background height*/
+  cardBGHight?: string;
 }
+
+// --card-container-padding: 1rem;
+// --img-height: 80%;
+// --card-bg-width: 17rem;
+// --card-bg-height: 400px;
 
 const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
   cardType = CardType.Text,
@@ -52,6 +60,10 @@ const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
   bgColor2 = "#444",
   titleClassName = "",
   descriptionClassName = "",
+  cardContainerPadding = "1rem",
+  imgHeight = "80%",
+  cardBGWidth = "300px",
+  cardBGHight = "400px",
 }) => {
   let classNameStr = genClassName(cardStyle, className).join(" ");
   let titleClass = genClassName(" card-text__title", titleClassName).join("");
@@ -61,12 +73,27 @@ const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
   ).join("");
 
   useEffect(() => {
-    let color = document.getElementsByClassName(cardStyle)[0];
-    let newColor = (color as unknown) as HTMLElement;
+    const getContainer = document.getElementsByClassName("card-container")[0];
+    const setContainer = (getContainer as unknown) as HTMLElement;
 
-    newColor.style.setProperty("--background-color-1", bgColor1);
-    newColor.style.setProperty("--background-color-2", bgColor2);
-  }, [cardStyle, bgColor1, bgColor2]);
+    setContainer.style.setProperty("--background-color-1", bgColor1);
+    setContainer.style.setProperty("--background-color-2", bgColor2);
+    setContainer.style.setProperty(
+      "--card-container-padding",
+      cardContainerPadding
+    );
+    setContainer.style.setProperty("--img-height", imgHeight);
+    setContainer.style.setProperty("--card-bg-width", cardBGWidth);
+    setContainer.style.setProperty("--card-bg-height", cardBGHight);
+  }, [
+    cardStyle,
+    bgColor1,
+    bgColor2,
+    cardContainerPadding,
+    imgHeight,
+    cardBGWidth,
+    cardBGHight,
+  ]);
 
   if (cardType === CardType.Text) {
     return (

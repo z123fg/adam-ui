@@ -38,7 +38,7 @@ function App() {
         description="test para"
         titleClassName="title className test "
         descriptionClassName="descrption class test"
-        bgColor1="white"
+        bgColor1="red"
         bgColor2="black"
       />
     </div>
