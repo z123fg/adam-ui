@@ -15,7 +15,7 @@ describe("test MyLink Component", ()=>{
         )
     });
 
-    it("should render correct button based on the prop", ()=>{
+    it("should render correct Link based on the prop", ()=>{
         const mockOnClickHandler = jest.fn();
         const linkProps = {
             underLine: Underline.Hover,
