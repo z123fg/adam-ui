@@ -264,3 +264,27 @@ $dropdown-transition: all 0.4s !default;
 
 // dropdown arrow
 $dropdown-arrow-color: $black;
+
+// checkbox size
+$cbx-size-width: 1rem !default;
+$cbx-size-height: 1rem !default;
+$cbx-size-width-lg: 1.5rem !default;
+$cbx-size-height-lg: 1.5rem !default;
+$cbx-size-width-sm: 0.8rem !default;
+$cbx-size-height-sm: 0.8rem !default;
+
+
+// checkbox radius
+$cbx-border-width: $border-width !default;
+$cbx-border-radius: $border-radius !default;
+$cbx-border-radius-lg: $border-radius-lg !default;
+$cbx-border-radius-sm: $border-radius-sm !default;
+
+// checkbox line
+$cbx-line-height: $line-height-base !default;
+$cbx-line-height-lg: $line-height-lg !default;
+$cbx-line-height-sm: $line-height-sm !default;
+
+// checkbox shadow
+$cbx-box-shadow: inset 0 1px 0 rgba($white, 0.15), 0 1px 1px rgba($black, 0.075) !default;
+$cbx-disabled-opacity: 0.65 !default;

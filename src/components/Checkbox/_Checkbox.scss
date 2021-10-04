@@ -1,0 +1,70 @@
+.cbx{
+    border: $cbx-border-width solid $black;
+    -webkit-appearance: none;
+    position: relative;
+    display: inline-block;
+    line-height: $cbx-line-height;
+    color: $body-color;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    @include checkbox-size(
+      $cbx-size-width,
+      $cbx-size-height,
+      $cbx-border-radius
+    );
+    &.disabled,
+    &[disabled] {
+    cursor: not-allowed;
+    opacity: $cbx-disabled-opacity;
+    box-shadow: none;
+  } 
+}
+.cbx:after {
+  color:$black;
+  visibility: visible;
+}
+
+.cbx:checked:after {
+  content: "✓";
+  text-align: center;
+  // background-clip: padding-box;
+}
+
+.cbx-sm {
+    @include checkbox-size(
+      $cbx-size-width-sm,
+      $cbx-size-height-sm,
+      $cbx-border-radius-sm
+    );
+  }
+.cbx-lg {
+    @include checkbox-size(
+      $cbx-size-width-lg,
+      $cbx-size-height-lg,
+      $cbx-border-radius-lg,
+    );
+  }
+  
+  .cbx-default {
+    @include checkbox-style(
+      $body-color,
+      $white,
+      $gray-400,
+      $primary
+    );
+  }
+  .cbx-primary {
+    @include checkbox-style($white, $primary, $primary);
+  }
+  .cbx-secondary {
+    @include checkbox-style($white, $secondary, $secondary);
+  }
+  .cbx-dark {
+    @include checkbox-style($white, $gray-600, $gray-600);
+  }
+  .cbx-checked {
+    @include checkbox-style($white, $pink, $pink);
+  }
+  
