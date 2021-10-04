@@ -9,7 +9,7 @@ import Checkbox from "./components/Checkbox/Checkbox"
 import Message, {
   MessageSize,
   MessageColor,
-  MessageType
+  MessageType,MessagePosition
 } from "./components/Message/Message";
 
 function App() {
@@ -37,10 +37,13 @@ function App() {
       <br /> <br />
 
       <Message
-        msgContent='This is a red message' />
+                msgPosition={MessagePosition.Top}
+        msgContent='This is a plain message' />
       
       <Message
+        msgClick={true}
         msgColor={MessageColor.Red}
+        msgPosition={MessagePosition.Bottom}
       msgContent='This is a red message' />
 
       <Message
@@ -49,7 +52,9 @@ function App() {
         msgContent='This is a large message.' />
       
       <Message
+        msgClick={true}
         msgType={MessageType.Urgent}
+        msgPosition={MessagePosition.Bottom}
       msgContent='This is a urgent message'/>
       
       <br />

@@ -45,7 +45,24 @@
   border-color: #007dc6;
 }
 
-// .msg-dark {
-//   background-color: $gray-800;
-//   color: $gray-500;
-// }
+.out-top {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.msg-top {
+  position: absolute;
+}
+
+.out-bottom {
+  position: fixed;
+  width: 100%;
+  bottom: 5;
+  left: 5;
+}
+.msg-bottom {
+  position: absolute;
+  // bottom: 2%;
+  // left: 2%;
+}

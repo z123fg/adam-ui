@@ -9,17 +9,23 @@ export enum MessageSize {
   Small = "sm",
 }
 
-//text color change
+//color change
 export enum MessageColor {
   Black = "black",
   Red = "red",
   Blue = "blue",
 }
 
-//background and border color change
+//weight change
 export enum MessageType {
   Urgent = "urgent",
   Default = "default",
+}
+
+//position change
+export enum MessagePosition {
+  Top = "top",
+  Bottom = "bottom",
 }
 
 interface IMessagesProps {
@@ -27,6 +33,7 @@ interface IMessagesProps {
     msgType?: MessageType;
     msgSize?: MessageSize;
     msgColor?: MessageColor;
+    msgPosition?: MessagePosition;
     msgContent?: string;
     msgClick?: boolean; //false for a auto delete message(alert), true for click delete
 }
@@ -36,6 +43,7 @@ export const Message: FC<IMessagesProps> = ({
     msgType=MessageType.Default,
     msgSize=MessageSize.Small, 
     msgColor = MessageColor.Black,
+    msgPosition = MessagePosition.Top,
     msgContent = "",
     msgClick=false,
         ...rest 
@@ -48,8 +56,13 @@ export const Message: FC<IMessagesProps> = ({
         [`msg-${msgType}`]: !!msgType,
         [`msg-${msgSize}`]: !!msgSize,
         [`msg-${msgColor}`]: !!msgColor,
+        [`msg-${msgPosition}`]: !!msgPosition,
     }  ).join(" ");
 
+    let classNameOut = genClassName(className,
+    {
+    [`out-${msgPosition}`]: !!msgPosition,
+}  ).join(" ");
 
     const [show, setShow] = useState(msgClick);
     const [appear, setAppear] = useState(true);
@@ -61,29 +74,34 @@ export const Message: FC<IMessagesProps> = ({
     if (msgClick) {
         if (show) {
             return (
+                <div className={classNameOut} >
                 <div className={classNameStr} {...(rest as IMessagesProps)}
-                    data-testid='message-element'
-                    onClick={(e) => {
-                        e.preventDefault();
-                        setShow(false);
-                    }}>
-                    <div style={{ textAlign: "right", margin: "-10px 0px -5px 0px", cursor:"pointer" }}>X</div>
-                    <div className='content'>
-                        <p>{msgContent}</p>
+                data-testid='message-element'
+                onClick={(e) => {
+                    e.preventDefault();
+                    setShow(false);
+                }}>
+                <div style={{ textAlign: "right", margin: "-10px 0px -5px 0px", cursor:"pointer" }}>X</div>
+                <div className='content'>
+                    <p>{msgContent}</p>
+                </div>
+                    </div >
                     </div>
-                </div >        
             );
         } else return null
     }
 
     if(appear) {
         return (
-        <div className={classNameStr} {...(rest as IMessagesProps)}
+                <div className={classNameOut}>
+
+            <div className={classNameStr} {...(rest as IMessagesProps)}
             data-testid='message-element'>
             <div className='content'>
                 <p>{msgContent}</p>
             </div>
-        </div >    
+                </div>
+                </div>
     )
     }else return (
         null
