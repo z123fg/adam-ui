@@ -37,7 +37,7 @@ function App() {
 
       <h2>Slider</h2>
       <MySlider
-        sliderSize={SliderSize.Small}
+        sliderSize={SliderSize.Large}
         photos={5}
         imageData={imageData}
       />
