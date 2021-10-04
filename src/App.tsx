@@ -40,6 +40,10 @@ function App() {
         descriptionClassName="descrption class test"
         bgColor1="white"
         bgColor2="black"
+        cardContainerPadding="2rem"
+        imgHeight="80%"
+        cardBGWidth="300px"
+        cardBGHight="400px"
       />
     </div>
   );

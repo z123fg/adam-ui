@@ -37,7 +37,7 @@ describe("test AnimatedHoverCard", () => {
         cardType={CardType.Text}
         title="title"
         description="description"
-        className="test"
+        imgContainerClassName="test"
       />
     );
 
