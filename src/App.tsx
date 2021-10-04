@@ -30,7 +30,7 @@ function App() {
       <MyButton href={"https://www.google.com"}  buttonType={ButtonType.Link}>Link Button</MyButton>
       <MyButton  href={"https://www.google.com"} buttonType={ButtonType.Link} disabled>Link Button</MyButton> */}
       <AnimatedHoverCard
-        className="Test"
+        imgContainerClassName="Test"
         imgSrc={img}
         cardStyle={CardStyle.Style1}
         cardType={CardType.Text}

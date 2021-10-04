@@ -19,7 +19,7 @@ interface IAnimatedCardProps {
   /**For now, only 2 styles available: card-style-{number} */
   cardStyle: string;
   /**You can give any className to div that contains the img*/
-  className?: string;
+  imgContainerClassName?: string;
   /**Title for text card type*/
   title?: string;
   /**Description for text card type*/
@@ -51,7 +51,7 @@ interface IAnimatedCardProps {
 
 const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
   cardType = CardType.Text,
-  className = "",
+  imgContainerClassName = "",
   title = "Title",
   description = "Description",
   imgSrc = img1,
@@ -65,7 +65,9 @@ const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
   cardBGWidth = "300px",
   cardBGHight = "400px",
 }) => {
-  let classNameStr = genClassName(cardStyle, className).join(" ");
+  let imgDivClassName = genClassName(cardStyle, imgContainerClassName).join(
+    " "
+  );
   let titleClass = genClassName(" card-text__title", titleClassName).join("");
   let descriptionClass = genClassName(
     " card-text__description",
@@ -111,7 +113,7 @@ const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
               {description}
             </p>
           </section>
-          <div aria-label="Image Div" id="textDiv" className={classNameStr}>
+          <div aria-label="Image Div" id="textDiv" className={imgDivClassName}>
             <img aria-label="Image" src={imgSrc} alt="img" />
           </div>
         </div>
@@ -122,7 +124,7 @@ const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
     return (
       <div aria-label="Pure Card Div" className="card-container">
         <div aria-label="this is actual card" className="card">
-          <div aria-label="Image Div" className={classNameStr}>
+          <div aria-label="Image Div" className={imgContainerClassName}>
             <img aria-label="Image" src={imgSrc} alt="img" />
           </div>
         </div>
