@@ -1,5 +1,5 @@
-.btn{
-    position: relative;
+.btn {
+  position: relative;
   display: inline-block;
   font-weight: $btn-font-weight;
   line-height: $btn-line-height;
@@ -14,7 +14,12 @@
   /* padding:$btn-padding-y $btn-padding-x;
   font-size: $btn-font-size;
   border-radius: $border-radius; */
-  @include button-size($btn-padding-y, $btn-padding-x,$btn-font-size,$border-radius);
+  @include button-size(
+    $btn-padding-y,
+    $btn-padding-x,
+    $btn-font-size,
+    $border-radius
+  );
   &.disabled,
   &[disabled] {
     cursor: not-allowed;
@@ -23,55 +28,64 @@
   }
 }
 
-.btn-sm{
-    @include button-size($btn-padding-y-sm, $btn-padding-x-sm,$btn-font-size-sm,$border-radius-sm);
-
+.btn-sm {
+  @include button-size(
+    $btn-padding-y-sm,
+    $btn-padding-x-sm,
+    $btn-font-size-sm,
+    $border-radius-sm
+  );
 }
 
-.btn-lg{
-    @include button-size($btn-padding-y-lg, $btn-padding-x-lg,$btn-font-size-lg,$border-radius-lg);
+.btn-lg {
+  @include button-size(
+    $btn-padding-y-lg,
+    $btn-padding-x-lg,
+    $btn-font-size-lg,
+    $border-radius-lg
+  );
 }
 
 .btn-default {
-    @include button-style(
-      $body-color,
-      $white,
-      $gray-400,
-      $primary,
-      $white,
-      $primary
-    );
+  @include button-style(
+    $body-color,
+    $white,
+    $gray-400,
+    $primary,
+    $white,
+    $primary
+  );
+}
+.btn-dark {
+  background-color: $gray-800;
+  color: $gray-500;
+}
+.btn-red {
+  color: red;
+}
+
+.btn-primary {
+  @include button-style($white, $primary, $primary);
+}
+.btn-secondary {
+  @include button-style($white, $secondary, $secondary);
+}
+.btn-danger {
+  @include button-style($white, $danger, $danger);
+}
+
+.btn-link {
+  font-weight: $font-weight-normal;
+  color: $btn-link-color !important;
+  text-decoration: $link-decoration;
+  box-shadow: none;
+  &:hover {
+    color: $btn-link-hover-color;
+    text-decoration: $link-hover-decoration;
   }
-  .btn-dark{
-    background-color: $gray-800;
-    color:$gray-500;
-  }
-  .btn-red{
-    color:red
-  }
-  
-  .btn-primary {
-    @include button-style($white, $primary, $primary);
-  }
-  .btn-secondary {
-    @include button-style($white, $secondary, $secondary);
-  }
-  .btn-danger {
-    @include button-style($white, $danger, $danger);
-  }
-  
-  .btn-link {
-    font-weight: $font-weight-normal;
-    color: $btn-link-color !important;
-    text-decoration: $link-decoration;
+  &:focus,
+  &.focus {
+    text-decoration: $link-hover-decoration;
     box-shadow: none;
-    &:hover {
-      color: $btn-link-hover-color;
-      text-decoration: $link-hover-decoration;
-    }
-    &:focus,
-    &.focus {
-      text-decoration: $link-hover-decoration;
-      box-shadow: none;
-    }
   }
+}

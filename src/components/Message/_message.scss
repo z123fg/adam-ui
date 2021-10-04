@@ -1,0 +1,68 @@
+.msg {
+  vertical-align: middle;
+  position: relative;
+  // cursor: pointer;
+  padding: 1.25rem 1.25rem 0.75rem 0.75rem;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  width: fit-content;
+  font-size: 16;
+}
+
+.msg-lg {
+  font-size: x-large;
+}
+
+.msg-sm {
+  font-size: medium;
+}
+
+.msg-default {
+  background-color: white;
+}
+
+.msg-urgent {
+  border-width: thick;
+  font-weight: 800;
+  // background-color: #ff5757;
+  // color: #b30000;
+  // border-color: #ff0606;
+}
+
+.msg-red {
+  color: #c83349;
+  background-color: #f8d7da;
+  border-color: #e99b9a;
+}
+
+.msg-black {
+  color: black;
+}
+
+.msg-blue {
+  background-color: #78b9e7;
+  color: #004c91;
+  border-color: #007dc6;
+}
+
+.out-top {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.msg-top {
+  position: absolute;
+}
+
+.out-bottom {
+  position: fixed;
+  width: 100%;
+  bottom: 5;
+  left: 5;
+}
+.msg-bottom {
+  position: absolute;
+  // bottom: 2%;
+  // left: 2%;
+}
