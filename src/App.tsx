@@ -1,9 +1,11 @@
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
 import "./styles/index.scss";
 import MyButton, {
   ButtonSize,
   ButtonType,
 } from "./components/MyButton/MyButton";
+import data from "./components/MySearchBox/data.json"
+import AutoComplete from "./components/MySearchBox/AutoComplete";
 
 function App() {
   return (
@@ -23,7 +25,14 @@ function App() {
       <MyButton buttonType={ButtonType.Secondary}>Secondary Button</MyButton>
       <MyButton buttonType={ButtonType.Danger}>Danger Button</MyButton>
       <MyButton href={"https://www.google.com"}  buttonType={ButtonType.Link}>Link Button</MyButton>
-      <MyButton  href={"https://www.google.com"} buttonType={ButtonType.Link} disabled>Link Button</MyButton>
+      <MyButton href={"https://www.google.com"} buttonType={ButtonType.Link} disabled>Link Button</MyButton>
+
+      <hr />
+      <br />
+      <div>
+        <h1>Auto Complete Search Box</h1>
+        <AutoComplete data={data} />
+      </div>
     </div>
   );
 }

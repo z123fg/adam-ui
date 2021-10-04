@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test MyButton Component renders the UI as expected 1`] = `
+<input
+  className="ac-input"
+  onChange={[Function]}
+  type="text"
+  value=""
+/>
+`;
