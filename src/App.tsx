@@ -1,29 +1,30 @@
-import React from "react";
 import "./styles/index.scss";
-import MyButton, {
-  ButtonSize,
-  ButtonType,
-} from "./components/MyButton/MyButton";
+import MyCheckbox, { 
+  CheckboxColor, 
+  CheckboxSize 
+} from "./components/MyCheckbox/MyCheckbox";
 
 function App() {
   return (
     <div className="App">
       <h1>Adam UI</h1>
-      <h4>Default</h4>
-      <MyButton>Default</MyButton>
-      <MyButton disabled>Disabled</MyButton>
-      <MyButton isDark>Dark Button</MyButton>
-      <MyButton className="btn-red">Additional Class Name</MyButton>
       <h4>Sizes</h4>
-      <MyButton buttonSize={ButtonSize.Small}>Small Button</MyButton>
-      <MyButton buttonSize={ButtonSize.Large}>Large Button</MyButton>
-      <h4>Types</h4>
-      <MyButton >Default Button</MyButton>
-      <MyButton buttonType={ButtonType.Primary}>Primary Button</MyButton>
-      <MyButton buttonType={ButtonType.Secondary}>Secondary Button</MyButton>
-      <MyButton buttonType={ButtonType.Danger}>Danger Button</MyButton>
-      <MyButton href={"https://www.google.com"}  buttonType={ButtonType.Link}>Link Button</MyButton>
-      <MyButton  href={"https://www.google.com"} buttonType={ButtonType.Link} disabled>Link Button</MyButton>
+      <MyCheckbox checkboxSize={CheckboxSize.Small} />Small&nbsp;&nbsp;
+      <MyCheckbox checkboxSize={CheckboxSize.Large} />Large
+      <h5></h5>
+      <h4>DefaultCheck</h4>
+      <MyCheckbox />Default&nbsp;&nbsp;
+      <MyCheckbox defaultCheck />DefaultCheck
+      <h5></h5>
+      <h4>Disabled</h4>
+      <MyCheckbox />Default&nbsp;&nbsp;
+      <MyCheckbox disabled />Disabled
+      <h5></h5>
+      <h4>Colors</h4>      
+      <MyCheckbox defaultCheck checkboxColor={CheckboxColor.Red} />Red&nbsp;&nbsp;
+      <MyCheckbox defaultCheck checkboxColor={CheckboxColor.Green} />Green&nbsp;&nbsp;
+      <MyCheckbox defaultCheck checkboxColor={CheckboxColor.Blue} />Blue&nbsp;&nbsp;
+      <MyCheckbox defaultCheck checkboxColor={CheckboxColor.Yellow} />Yellow&nbsp;&nbsp;
     </div>
   );
 }

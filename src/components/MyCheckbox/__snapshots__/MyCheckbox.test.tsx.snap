@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test MyCheckbox Component should snapshot 1`] = `
+<DocumentFragment>
+  <input
+    class=" checkbox checkbox-sm checkbox-nocolor"
+    data-testid="element"
+    type="checkbox"
+  />
+</DocumentFragment>
+`;

@@ -1,0 +1,91 @@
+.checkbox{
+  position: relative;
+  display: inline-block;
+  color: $body-color;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.checkbox-sm{
+  zoom:$checkbox-sm; 
+}
+
+.checkbox-lg{
+  zoom:$checkbox-lg
+}
+
+.checkbox-red{
+  //position: relative;
+  border: 1.5px solid grey ;
+  background-color: white;
+  width: 13px;
+  height: 13px;
+  border-radius: 20%;
+  -webkit-appearance:none;
+  -webkit-tap-highlight-color: transparent;
+  &:checked{
+    content: "\2714";
+    font-weight: bold;
+    background-color: red;
+    border: 1px solid red;
+    background-clip: padding-box;
+    text-align: center;
+    }
+  }
+
+  .checkbox-green{
+
+  border: 1.5px solid grey ;
+  background-color: white;
+  width: 13px;
+  height: 13px;
+  border-radius: 20%;
+  -webkit-appearance:none;
+  -webkit-tap-highlight-color: transparent;
+  &:checked{
+    content: "\2714";
+    font-weight: bold;
+    background-color: green;
+    border: 1px solid green;
+    background-clip: padding-box;
+    text-align: center;
+    }
+  }
+
+  .checkbox-blue{
+  border: 1.5px solid grey ;
+  background-color: white;
+  width: 13px;
+  height: 13px;
+  border-radius: 20%;
+  -webkit-appearance:none;
+  -webkit-tap-highlight-color: transparent;
+  &:checked{
+    content: "\2714";
+    font-weight: bold;
+    background-color: rgb(40, 176, 240);
+    border: 1px solid rgb(40, 176, 240);
+    background-clip: padding-box;
+    text-align: center;
+    }
+  }
+
+  .checkbox-yellow{
+  border: 1.5px solid grey ;
+  background-color: white;
+  width: 13px;
+  height: 13px;
+  border-radius: 20%;
+  -webkit-appearance:none;
+  -webkit-tap-highlight-color: transparent;
+  &:checked{
+    content: "\2714";
+    font-weight: bold;
+    background-color: rgb(194, 194, 28);
+    border: 1px solid rgb(194, 194, 28);
+    background-clip: padding-box;
+    text-align: center;
+    }
+  }
