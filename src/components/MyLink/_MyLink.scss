@@ -1,0 +1,151 @@
+@mixin link-variant($font-weight, $font-size, $line-height, $letter-spacing){
+    font-weight: $font-weight;
+    font-size: $font-size;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+}
+
+// variables
+$link-color-blue: #1976d2;
+$link-color-lightblue: #1976d291;
+
+// default
+$link-font-weight: 400;
+$link-font-size: 1rem default;
+$link-line-height: 1.5 default;
+$link-letter-spacing: 0.00938em !default;
+
+// body
+$link-font-weight-body: 400 !default;
+$link-font-size-body: 0.875rem !default;
+$link-line-height-body: 1.43 !default;
+$link-letter-spacing-body: 0.01071em !default;
+
+// button
+$link-font-weight-button: 500 !default;
+$link-font-size-button: 0.875rem !default;
+$link-line-height-button: 1.75 !default;
+$link-letter-spacing-button: 0.02857em !default;
+
+// h1
+$link-font-weight-h1: 300 !default;
+$link-font-size-h1: 6rem !default;
+$link-line-height-h1: 1.167 !default;
+$link-letter-spacing-h1: -0.01562em !default;
+
+// h2
+$link-font-weight-h2: 300 !default;
+$link-font-size-h2: 3.75rem !default;
+$link-line-height-h2: 1.2 !default;
+$link-letter-spacing-h2: -0.00833em !default;
+
+// h3
+$link-font-weight-h3: 400 !default;
+$link-font-size-h3: 3rem !default;
+$link-line-height-h3: 1.167rem !default;
+$link-letter-spacing-h3: 0em !default;
+
+//subtitile
+$link-font-weight-subtitle: 500 !default;
+$link-font-size-subtitle: 0.875rem !default;
+$link-line-height-subtitle: 1.57 !default;
+$link-letter-spacing-subtitle: 0.00714em !default;
+
+
+.link{
+    margin: 0;
+    margin-left:  16px;
+    color: $link-color-blue;
+    cursor: pointer;
+    &:not([href]) {
+        cursor: text;
+        color: $link-color-blue;
+    }
+}
+
+.link-always,
+.link-always:not([href]){
+    text-decoration: underline;
+    &:hover{
+        text-decoration: underline;
+        text-decoration-thickness: 15%;
+        color: $link-color-blue;
+    }
+}
+
+.link-none,
+.link-none:not([href]){
+    text-decoration: none;
+    color: $link-color-blue;
+    &:hover{
+        color: $link-color-blue;
+    }
+}
+
+.link-hover,
+.link-hover:not([href]){
+    text-decoration: none;
+    color: $link-color-blue;
+    &:hover{
+        text-decoration: underline;
+        color: $link-color-blue;
+    }
+}
+
+.link-red,
+.link-red:not([href]){
+    color: red;
+    &:hover{
+        color: red;
+    }
+}
+
+.link-default {
+    @include link-variant($link-font-weight, $link-font-size, $link-line-height, $link-letter-spacing);
+}
+
+.link-body{
+    @include link-variant($link-font-weight-body, $link-font-size-body, $link-line-height-body, $link-letter-spacing-body);
+}
+
+.link-button{
+    @include link-variant($link-font-weight-button, $link-font-size-button, $link-line-height-button, $link-letter-spacing-button);
+    text-transform: uppercase;
+}
+
+.link-h1,
+.link-h1:not([href]){
+    @include link-variant($link-font-weight-h1, $link-font-size-h1, $link-line-height-h1, $link-letter-spacing-h1);
+    text-decoration-color: $link-color-lightblue;
+    &:hover{
+        text-decoration-thickness: 10%;
+    }
+}
+
+.link-h2,
+.link-h2:not([href]){
+    @include link-variant($link-font-weight-h2, $link-font-size-h2, $link-line-height-h2, $link-letter-spacing-h2);
+    text-decoration-color: $link-color-lightblue;
+    &:hover{
+        text-decoration-thickness: 10%;
+    }
+}
+
+.link-h3,
+.link-h3:not([href]){
+    @include link-variant($link-font-weight-h3, $link-font-size-h3, $link-line-height-h3, $link-letter-spacing-h3);
+    text-decoration-color: $link-color-lightblue;
+    &:hover{
+        text-decoration-thickness: 10%;
+    }
+}
+
+.link-subtitle{
+    @include link-variant($link-font-weight-subtitle, $link-font-size-subtitle, $link-line-height-subtitle, $link-letter-spacing-subtitle);
+}
+
+.disabled,
+.disabled:not([href]){
+    cursor: not-allowed;
+    opacity: $btn-disabled-opacity;
+}
