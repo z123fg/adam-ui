@@ -1,14 +1,14 @@
 
-//input: "btn", {btn-sm: true,btn-danger:false}
-// output: ["btn", "btn-sm"]
+//input: "checkbox", {checkbox-sm: true,checkbox-danger:false}
+// output: ["checkbox", "checkbox-sm"]
 export type args = (string|{[key:string]:boolean})[]
 
 const genClassName:(...args:args)=>string[] = (...rest:args) => {
-//["btn",{btn-sm:true},{btn-danger:false}]
+//["checkbox",{checkbox-sm: true},{checkbox-danger:false}]
    return rest.reduce((acc:string[],curr)=>{
         if(typeof curr !== "string"){
             const temp = acc;
-            //[["btn-sm", true],["btn-danger", false]]
+            //[["checkbox-sm", true],["checkbox-danger", false]]
             Object.entries(curr).forEach(([key,value])=>{
                 value&&temp.push(key)
             })
