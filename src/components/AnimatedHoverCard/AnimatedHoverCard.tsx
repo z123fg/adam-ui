@@ -2,6 +2,7 @@ import React, { FC, useEffect } from "react";
 import "./AnimatedHoverCard.css";
 import img1 from "./img/img1.png";
 import genClassName from "../../util/genClassName";
+import { container, cardPosition } from "./style";
 
 export enum CardType {
   Pure = "pure",
@@ -13,108 +14,111 @@ export enum CardStyle {
   Style2 = "card-style-2",
 }
 
-interface IAnimatedCardProps {
+interface IStyle {
+  /**This changes pattern 1 color */
+  PatternColor1?: string;
+
+  /**This changes pattern 2 color */
+  PatternColor2?: string;
+
+  /**Accept image height value*/
+  ImageHeight?: string;
+
+  /**Change background width*/
+  CardWidth?: string;
+
+  /**Change background height*/
+  CardHeight?: string;
+
+  /**Change container padding*/
+  cardContainerPadding?: string;
+}
+
+interface IClassName {
+  /**You can give any className to div that contains the img*/
+  ImgContainerClassName?: Object;
+
+  /**Accept className for title*/
+  titleClassName?: Object;
+
+  /**Accept className for description*/
+  descriptionClassName?: Object;
+}
+
+interface IText {}
+
+interface IAnimatedCardProps extends IStyle, IClassName, IText {
   /**2 card types*/
   cardType: CardType;
   /**For now, only 2 styles available: card-style-{number} */
   cardStyle: string;
-  /**You can give any className to div that contains the img*/
-  imgContainerClassName?: string;
   /**Title for text card type*/
   title?: string;
   /**Description for text card type*/
   description?: string;
   /**insert your img source path*/
   imgSrc?: string;
-  /**This changes animated background color 1*/
-  bgColor1?: string;
-  /**This changes animated background color 2*/
-  bgColor2?: string;
-  /**Accept className for title*/
-  titleClassName?: string;
-  /**Accept className for description*/
-  descriptionClassName?: string;
-  /**Accept padding for card container*/
-  cardContainerPadding?: string;
-  /**Accept image height value*/
-  imgHeight?: string;
-  /**Change background width*/
-  cardBGWidth?: string;
-  /**Change background height*/
-  cardBGHight?: string;
 }
-
-// --card-container-padding: 1rem;
-// --img-height: 80%;
-// --card-bg-width: 17rem;
-// --card-bg-height: 400px;
 
 const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
   cardType = CardType.Text,
-  imgContainerClassName = "",
+  ImgContainerClassName = {},
   title = "Title",
   description = "Description",
   imgSrc = img1,
   cardStyle = CardStyle.Style1,
-  bgColor1 = "#2da2ff",
-  bgColor2 = "#444",
-  titleClassName = "",
-  descriptionClassName = "",
+  PatternColor1 = "#2da2ff",
+  PatternColor2 = "#444",
+  titleClassName = {},
+  descriptionClassName = {},
   cardContainerPadding = "1rem",
-  imgHeight = "80%",
-  cardBGWidth = "300px",
-  cardBGHight = "400px",
+  ImageHeight = "80%",
+  CardWidth = "300px",
+  CardHeight = "400px",
 }) => {
-  let imgDivClassName = genClassName(cardStyle, imgContainerClassName).join(
-    " "
-  );
-  let titleClass = genClassName(" card-text__title", titleClassName).join("");
-  let descriptionClass = genClassName(
-    " card-text__description",
-    descriptionClassName
-  ).join("");
-
   useEffect(() => {
     const getContainer = document.getElementsByClassName("card-container")[0];
     const setContainer = (getContainer as unknown) as HTMLElement;
 
-    setContainer.style.setProperty("--background-color-1", bgColor1);
-    setContainer.style.setProperty("--background-color-2", bgColor2);
-    setContainer.style.setProperty(
-      "--card-container-padding",
-      cardContainerPadding
-    );
-    setContainer.style.setProperty("--img-height", imgHeight);
-    setContainer.style.setProperty("--card-bg-width", cardBGWidth);
-    setContainer.style.setProperty("--card-bg-height", cardBGHight);
+    // setContainer.style.setProperty("--background-color-1", bgColor1);
+    // setContainer.style.setProperty("--background-color-2", bgColor2);
+
+    // setContainer.style.setProperty("--img-height", imgHeight);
+    // setContainer.style.setProperty("--card-bg-width", cardBGWidth);
+    // setContainer.style.setProperty("--card-bg-height", cardBGHight);
   }, [
     cardStyle,
-    bgColor1,
-    bgColor2,
+    PatternColor1,
+    PatternColor2,
     cardContainerPadding,
-    imgHeight,
-    cardBGWidth,
-    cardBGHight,
+    ImageHeight,
+    CardHeight,
+    CardWidth,
   ]);
 
   if (cardType === CardType.Text) {
     return (
       //for text
-      <div aria-label="Text Card Div" className="card-container">
-        <div aria-label="this is actual card" className="card">
-          <section
-            aria-label="this section contains text"
-            className="card-text"
-          >
-            <h3 aria-label="title" className={titleClass}>
+      <div
+        id="TextCard"
+        className="card-container"
+        style={container(cardContainerPadding)}
+      >
+        <div className="card">
+          <section className="card-text">
+            <h3 className="card-text__title" style={titleClassName}>
               {title}
             </h3>
-            <p aria-label="description" className={descriptionClass}>
+            <p
+              aria-label="description"
+              className="card-text__description"
+              style={descriptionClassName}
+            >
               {description}
             </p>
           </section>
-          <div aria-label="Image Div" id="textDiv" className={imgDivClassName}>
-            <img aria-label="Image" src={imgSrc} alt="img" />
+          <div id="textDiv" className={cardStyle}>
+            <img src={imgSrc} alt="img" />
           </div>
         </div>
       </div>
@@ -122,9 +126,13 @@ const AnimatedHoverCard: FC<IAnimatedCardProps> = ({
   } else {
     //for pure
     return (
-      <div aria-label="Pure Card Div" className="card-container">
+      <div
+        id="PureCard"
+        className="card-container"
+        style={container(cardContainerPadding)}
+      >
         <div aria-label="this is actual card" className="card">
-          <div aria-label="Image Div" className={imgContainerClassName}>
+          <div aria-label="Image Div" style={ImgContainerClassName}>
             <img aria-label="Image" src={imgSrc} alt="img" />
           </div>
         </div>

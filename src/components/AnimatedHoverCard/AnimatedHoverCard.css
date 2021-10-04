@@ -10,15 +10,6 @@
   --card-bg-height: 400px;
 }
 
-.card-container {
-  width: fit-content;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: var(--card-container-padding);
-}
-
 .card {
   position: relative;
   display: flex;

@@ -30,20 +30,20 @@ function App() {
       <MyButton href={"https://www.google.com"}  buttonType={ButtonType.Link}>Link Button</MyButton>
       <MyButton  href={"https://www.google.com"} buttonType={ButtonType.Link} disabled>Link Button</MyButton> */}
       <AnimatedHoverCard
-        imgContainerClassName="Test"
+        // ImgContainerClassName={{ width: "10px" }}
         imgSrc={img}
         cardStyle={CardStyle.Style1}
         cardType={CardType.Text}
         title="test title"
         description="test para"
-        titleClassName="title className test "
-        descriptionClassName="descrption class test"
-        bgColor1="white"
-        bgColor2="black"
+        // titleClassName={{ width: "10px" }}
+        // descriptionClassName={{ width: "10px" }}
+        PatternColor1="white"
+        PatternColor2="black"
         cardContainerPadding="2rem"
-        imgHeight="80%"
-        cardBGWidth="300px"
-        cardBGHight="400px"
+        ImageHeight="80%"
+        CardWidth="300px"
+        CardHeight="400px"
       />
     </div>
   );
