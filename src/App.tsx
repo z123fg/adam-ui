@@ -4,6 +4,7 @@ import MyButton, {
   ButtonSize,
   ButtonType,
 } from "./components/MyButton/MyButton";
+import MyAlerts, { alertsize, alertstyle }from "./components/MyAlerts/MyAlerts";
 
 function App() {
   return (
@@ -24,6 +25,21 @@ function App() {
       <MyButton buttonType={ButtonType.Danger}>Danger Button</MyButton>
       <MyButton href={"https://www.google.com"}  buttonType={ButtonType.Link}>Link Button</MyButton>
       <MyButton  href={"https://www.google.com"} buttonType={ButtonType.Link} disabled>Link Button</MyButton>
+
+      <h2> Alerts Style </h2>
+      <MyAlerts > A simple Default alert—check it out!</MyAlerts>
+      <MyAlerts alertSize={alertsize.Primary}  > A simple Primary alert—check it out!</MyAlerts>
+      <MyAlerts alertSize={alertsize.Secondary}  > A simple Secondary alert—check it out!</MyAlerts>
+      <MyAlerts alertSize={alertsize.Success}> A simple Success alert—check it out!</MyAlerts>
+      <MyAlerts alertSize={alertsize.Danger}> A simple Danger alert—check it out!</MyAlerts>
+      <MyAlerts alertSize={alertsize.Warning}> A simple Warning alert—check it out!</MyAlerts>
+      <MyAlerts alertSize={alertsize.Info}> A simple Info alert—check it out!</MyAlerts>
+      <MyAlerts alertSize={alertsize.Light}> A simple Light alert—check it out!</MyAlerts>
+      <MyAlerts alertSize={alertsize.Dark}> A simple Dark alert—check it out!</MyAlerts>
+      <h1> Different Size</h1>
+      <MyAlerts alertSize={alertsize.Primary} alertStyle={alertstyle.Large}> A simple Primary alert—check it out!</MyAlerts>
+      <MyAlerts alertSize={alertsize.Secondary} alertStyle={alertstyle.Small}> A simple Secondary alert—check it out!</MyAlerts>
+
     </div>
   );
 }

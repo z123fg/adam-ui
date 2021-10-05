@@ -264,3 +264,30 @@ $dropdown-transition: all 0.4s !default;
 
 // dropdown arrow
 $dropdown-arrow-color: $black;
+
+// Alert
+$border-width: 1px !default;
+$border-color: $gray-300 !default;
+
+$border-radius: 0.25rem !default;
+$border-radius-lg: 0.3rem !default;
+$border-radius-sm: 0.2rem !default;
+
+// Alert
+$Alert-font-weight: 400;
+$Alert-padding-y: 0.375rem !default;
+$Alert-padding-x: 0.75rem !default;
+
+$Alert-font-family: $font-family-base !default;
+$Alert-font-size: $font-size-base !default;
+$Alert-line-height: $line-height-base !default;
+
+// Alert small
+$Alert-padding-y-sm: 0.25rem !default;
+$Alert-padding-x-sm: 0.5rem !default;
+$Alert-font-size-sm: $font-size-sm !default;
+
+// Alert large
+$Alert-padding-y-lg: 0.5rem !default;
+$Alert-padding-x-lg: 1rem !default;
+$Alert-font-size-lg: $font-size-lg !default;

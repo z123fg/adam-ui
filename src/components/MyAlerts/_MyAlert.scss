@@ -1,0 +1,109 @@
+.alert {
+   width: 100%;
+   $font-size-lg: $font-size-base * 1.25 !default;
+   text-align: center;
+   padding: 20px;
+   margin:  20px 0px;
+
+}
+
+.alert-primary {
+    @include alert-style(
+        $white,
+       $primary,    
+       $primary,
+       // $white,
+       // $primary
+      );
+    
+}
+.alert-secondary{
+    @include alert-style(
+        $white,
+        $gray-500,
+        $gray-600,
+        // $primary,
+        // $white,
+        // $primary
+      );
+}
+.alert-success{
+    @include alert-style(
+        $white,
+        $green,
+        $gray-400,
+        // $primary,
+        // $white,
+        // $primary
+      );
+}
+.alert-danger{
+    @include alert-style(
+        $white,
+        $red,
+        $gray-400,
+        // $primary,
+        // $white,
+        // $primary
+      );
+}
+.alert-warning{
+    @include alert-style(
+        $white,
+        $yellow,        
+        $primary,
+        $white,
+        //$primary
+      );
+}
+.alert-info{
+    @include alert-style(
+        $white,
+        $cyan,
+        $gray-400,
+        $white,
+        //$primary
+      );
+}
+.alert-light{
+    @include alert-style(
+        $cyan,
+        $gray-100,
+        $gray-400,
+        //$primary,
+       // $white,
+        //$primary
+      );
+}
+.alert-dark{
+    @include alert-style(
+        $white,
+        $gray-800,
+        $gray-400,
+        $gray-400,
+        // $white,
+        // $primary
+      );
+}
+.alert-lg{
+    // @include alertstyle(
+    //     // $btn-padding-y-lg, 
+    //     //  $btn-padding-x-lg,
+    //     //  $btn-font-size-lg,
+    //      );
+    font-size: 50px;
+}
+
+.alert-sm{
+    // @include alertstyle(
+    //     // $Alert-padding-y-sm,
+    //     // $Alert-padding-x-sm,
+    //     // $Alert-font-size-sm,
+         
+        
+    //      );
+    font-size: 10px;
+
+
+}
+
