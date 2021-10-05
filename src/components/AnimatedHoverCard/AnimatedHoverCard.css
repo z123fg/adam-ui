@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap");
+
+:root {
+  --background-color-1: #2da2ff;
+  --background-color-2: #444;
+  --card-container-padding: 1rem;
+  --img-height: 80%;
+  --card-bg-width: 17rem;
+  --card-bg-height: 400px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-reflect: below 1px
+    linear-gradient(transparent, transparent, transparent, #000);
+}
+
+.card-text {
+  text-align: center;
+}
+
+.card-text__title {
+  font-family: "Comfortaa", cursive;
+  font-weight: 700;
+}
+
+.card-text__description {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+.card-container .card-style-1 {
+  position: relative;
+  width: var(--card-bg-width);
+  height: var(--card-bg-height);
+  background-color: black;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 20px;
+  background: linear-gradient(
+    45deg,
+    var(--background-color-1) 25%,
+    var(--background-color-2) 25%,
+    var(--background-color-2) 50%,
+    var(--background-color-1) 50%,
+    var(--background-color-1) 75%,
+    var(--background-color-2) 75%,
+    var(--background-color-2) 100%
+  );
+  background-size: 40px 40px;
+  filter: grayscale(1);
+  animation: animateBG 0.5s linear infinite;
+  animation-play-state: paused;
+  transition: filter 1s;
+  display: flex;
+  justify-content: center;
+}
+
+.card-container .card-style-1:hover {
+  animation-play-state: running;
+  filter: grayscale(0);
+}
+
+.card-style-1 img {
+  position: absolute;
+  bottom: 0;
+  height: var(--img-height);
+  transition: height 0.5s;
+}
+
+.card-style-1 img:hover {
+  height: 110%;
+}
+
+.card-container .card-style-2 {
+  position: relative;
+  width: var(--card-bg-width);
+  height: var(--card-bg-height);
+  background-color: black;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    var(--background-color-1) 25%,
+    var(--background-color-2) 25%,
+    var(--background-color-2) 50%,
+    var(--background-color-1) 50%,
+    var(--background-color-1) 75%,
+    var(--background-color-2) 75%,
+    var(--background-color-2) 100%
+  );
+  background-size: 40px 40px;
+  filter: grayscale(1);
+  animation: animateBG 0.5s linear infinite;
+  animation-play-state: paused;
+  transition: filter 1s;
+  display: flex;
+  justify-content: center;
+}
+
+.card-container .card-style-2:hover {
+  animation-play-state: running;
+  filter: grayscale(0);
+}
+
+.card-style-2 img {
+  position: absolute;
+  bottom: 0;
+  height: var(--img-height);
+  transition: height 0.5s;
+}
+
+.card-style-2 img:hover {
+  height: 110%;
+}
+
+@keyframes animateBG {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: 40px;
+  }
+}
