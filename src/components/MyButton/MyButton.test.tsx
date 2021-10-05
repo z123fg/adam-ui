@@ -18,7 +18,7 @@ describe("test MyButton Component", () => {
         const wrapper = render(<MyButton id="123">Default Button</MyButton>);
         const firstRender = wrapper.asFragment();
         expect(firstRender).toMatchSnapshot();
-        expect(firstRender).toMatchInlineSnapshot(`
+       /*  expect(firstRender).toMatchInlineSnapshot(`
         <DocumentFragment>
           <button
             class="btn  btn-default btn-sm"
@@ -27,7 +27,7 @@ describe("test MyButton Component", () => {
             Default Button
           </button>
         </DocumentFragment>
-        `)
+        `) */
     })
   it("should render without issue", () => {
     const wrapper = render(<MyButton>Default Button</MyButton>);
