@@ -8,3 +8,12 @@ exports[`test MyButton Component renders the UI as expected 1`] = `
   value=""
 />
 `;
+
+exports[`test auto complete component renders without crash 1`] = `
+<input
+  className="ac-input"
+  onChange={[Function]}
+  type="text"
+  value=""
+/>
+`;

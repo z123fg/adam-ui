@@ -2,20 +2,17 @@ import * as React from "react";
 
 interface Props {
     data: string[];
+    onSelect?: Function
 }
 
-const AutoComplete: React.FC<Props> = ({ data }) => {
+const AutoComplete: React.FC<Props> = ({ data, onSelect }) => {
     const [search, setSearch] = React.useState<string>("");
     const [filterResults, setFilterResults] = React.useState<string[]>([]);
     const [showResults, setShowResults] = React.useState<boolean>(false);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const input = e.target.value;
-        setSearch(input)
-
+    const filterSupport = (input:string) => {
         const result = data.filter((value) => 
-            value.toLowerCase().indexOf(input.toLowerCase()) > -1
-        );
+        value.toLowerCase().indexOf(input.toLowerCase()) > -1);
 
         if(input.length > 0) {
             setFilterResults(result);
@@ -23,16 +20,25 @@ const AutoComplete: React.FC<Props> = ({ data }) => {
             setFilterResults([]);
         }
 
+    }
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const input = e.target.value;
+        setSearch(input)
+        filterSupport(input)
         setShowResults(true);
     };
 
-    const handleSelect = (result:string) => {
+    const handleSelect = (itemSelected:string) => {
         setShowResults(false);
         setFilterResults([]);
-        setSearch(result)
+        setSearch(itemSelected)
+        if(onSelect !== undefined){
+            onSelect(itemSelected)
+        }
     }
 
-    const Suggestions = () => {
+    const renderSuggestions = () => {
         return filterResults.length?(
             <>
                 <ul className="ac-list">
@@ -51,7 +57,7 @@ const AutoComplete: React.FC<Props> = ({ data }) => {
     return (
         <>
             <input type="text" value={search} onChange={handleChange} className="ac-input"/>
-            {showResults && search && <Suggestions />}
+            {showResults && search && renderSuggestions()}
         </>
     )
 }

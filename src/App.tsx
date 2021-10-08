@@ -4,10 +4,14 @@ import MyButton, {
   ButtonSize,
   ButtonType,
 } from "./components/MyButton/MyButton";
-import data from "./components/MySearchBox/data.json"
-import AutoComplete from "./components/MySearchBox/AutoComplete";
+import data from "./components/MyAutoComplete/data.json"
+import AutoComplete from "./components/MyAutoComplete/AutoComplete";
 
 function App() {
+  const selectHandler = (value:string) => {
+    alert(value)
+  }
+
   return (
     <div className="App">
       <h1>Adam UI</h1>
@@ -31,7 +35,7 @@ function App() {
       <br />
       <div>
         <h1>Auto Complete Search Box</h1>
-        <AutoComplete data={data} />
+        <AutoComplete data={data} onSelect={selectHandler} />
       </div>
     </div>
   );
